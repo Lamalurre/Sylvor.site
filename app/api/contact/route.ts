@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { supabaseAdmin } from "@/lib/supabaseAdmin";
+import { getSupabaseAdmin } from "@/lib/supabaseAdmin";
 
 export async function POST(req: NextRequest) {
   const body = await req.json().catch(() => null);
@@ -22,7 +22,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
   }
 
-  const { error } = await supabaseAdmin.from("leadflow_contacts").insert({
+  const { error } = await getSupabaseAdmin().from("leadflow_contacts").insert({
     name: name.trim(),
     email: email.trim(),
     business_type: businessType.trim(),
