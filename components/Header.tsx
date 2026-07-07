@@ -1,27 +1,29 @@
+import Link from "next/link";
+
 export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-ivory/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <span className="font-serif text-xl font-medium tracking-tight">
+        <Link href="/" className="font-serif text-xl font-medium tracking-tight">
           LeadFlow
-        </span>
+        </Link>
         <nav className="hidden gap-8 text-sm text-ink/70 sm:flex">
-          <a href="#how-it-works" className="hover:text-ink">
+          <Link href="/#how-it-works" className="hover:text-ink">
             How it works
-          </a>
-          <a href="#pricing" className="hover:text-ink">
+          </Link>
+          <Link href="/#pricing" className="hover:text-ink">
             Pricing
-          </a>
-          <a href="#contact" className="hover:text-ink">
+          </Link>
+          <Link href="/#contact" className="hover:text-ink">
             Contact
-          </a>
+          </Link>
         </nav>
-        <a
-          href="#contact"
+        <Link
+          href="/#contact"
           className="rounded-full bg-navy px-4 py-2 text-sm font-medium text-white transition hover:bg-navy-dark"
         >
           Book a free call
-        </a>
+        </Link>
       </div>
     </header>
   );

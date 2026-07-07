@@ -116,3 +116,40 @@ body {
   background: var(--color-ivory-card);
   box-shadow: 0 20px 45px -20px rgba(0, 0, 0, 0.6);
 }
+
+/* receding 3D grid "floor" decorative accent */
+.grid-floor {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.grid-floor::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 220%;
+  height: 100%;
+  background-image:
+    linear-gradient(rgba(74, 108, 247, 0.35) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(74, 108, 247, 0.35) 1px, transparent 1px);
+  background-size: 60px 60px;
+  transform: translateX(-50%) perspective(300px) rotateX(62deg);
+  transform-origin: bottom center;
+  -webkit-mask-image: linear-gradient(to top, black, transparent 85%);
+  mask-image: linear-gradient(to top, black, transparent 85%);
+}
+
+.grid-floor::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 340px;
+  height: 340px;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(74, 108, 247, 0.35), transparent 70%);
+  filter: blur(10px);
+}

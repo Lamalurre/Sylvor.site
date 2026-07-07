@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Reveal from "./motion/Reveal";
 
 const CONTACT_EMAIL = "Hello.leadflow1@outlook.com";
 
@@ -38,20 +39,8 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="mx-auto max-w-3xl px-6 py-24">
-      <div className="text-center">
-        <h2 className="font-serif text-3xl font-medium tracking-tight sm:text-4xl">
-          Ready to stop losing leads to slow replies?
-        </h2>
-        <a
-          href={`mailto:${CONTACT_EMAIL}`}
-          className="mt-6 inline-block rounded-full border border-ink/20 px-7 py-3.5 text-base font-medium text-ink transition hover:border-ink/40 hover:bg-ink/5"
-        >
-          Book a free call
-        </a>
-      </div>
-
-      <div className="relative mt-12">
+    <section className="mx-auto max-w-3xl px-6 pb-24 pt-12">
+      <Reveal className="relative">
         <div
           className="absolute inset-0 rounded-2xl border border-navy/20 bg-ivory-card/60"
           style={{ transform: "rotate(-2deg)" }}
@@ -133,7 +122,7 @@ export default function Contact() {
           </p>
         )}
         </form>
-      </div>
+      </Reveal>
     </section>
   );
 }

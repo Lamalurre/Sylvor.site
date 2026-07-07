@@ -3,6 +3,9 @@ import Link from "next/link";
 import StepIllustration from "@/components/StepIllustration";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Reveal from "@/components/motion/Reveal";
+import RevealStep from "@/components/motion/RevealStep";
+import { RevealGroup, RevealItem } from "@/components/motion/RevealGroup";
 
 export const metadata: Metadata = {
   title: "Lead Conversion Automation — LeadFlow",
@@ -74,26 +77,28 @@ export default function LeadConversionAutomation() {
     <>
       <Header />
       <main className="flex-1">
-        <section className="mx-auto max-w-4xl px-6 pb-8 pt-16">
-          <Link
-            href="/"
-            className="text-sm font-medium text-ink/50 hover:text-ink"
-          >
-            ← Back to LeadFlow
-          </Link>
-          <span className="mt-6 block text-xs font-semibold uppercase tracking-wide text-navy">
-            Flagship
-          </span>
-          <h1 className="mt-2 font-serif text-4xl font-medium tracking-tight sm:text-5xl">
-            Lead Conversion Automation
-          </h1>
-          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink/70">
-            Every inbound inquiry read, priced against your rates, checked
-            for missing details, ranked by priority, and turned into a
-            ready-to-send reply — with you approving the final message
-            before it ever reaches a customer.
-          </p>
-        </section>
+        <Reveal>
+          <section className="mx-auto max-w-4xl px-6 pb-8 pt-16">
+            <Link
+              href="/"
+              className="text-sm font-medium text-ink/50 hover:text-ink"
+            >
+              ← Back to LeadFlow
+            </Link>
+            <span className="mt-6 block text-xs font-semibold uppercase tracking-wide text-navy">
+              Flagship
+            </span>
+            <h1 className="mt-2 font-serif text-4xl font-medium tracking-tight sm:text-5xl">
+              Lead Conversion Automation
+            </h1>
+            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink/70">
+              Every inbound inquiry read, priced against your rates, checked
+              for missing details, ranked by priority, and turned into a
+              ready-to-send reply — with you approving the final message
+              before it ever reaches a customer.
+            </p>
+          </section>
+        </Reveal>
 
         <section className="mx-auto max-w-5xl space-y-28 px-6 py-16 sm:space-y-36">
           {steps.map((s, i) => {
@@ -103,38 +108,44 @@ export default function LeadConversionAutomation() {
                 key={s.title}
                 className="grid items-center gap-14 sm:grid-cols-2 sm:gap-16"
               >
-                <div className={imageFirst ? "sm:order-2" : "sm:order-1"}>
+                <RevealStep
+                  fromRight={imageFirst}
+                  className={imageFirst ? "sm:order-2" : "sm:order-1"}
+                >
                   <h2 className="text-2xl font-semibold leading-snug">
                     {s.title}
                   </h2>
                   <p className="mt-3 max-w-md leading-relaxed text-ink/70">
                     {s.body}
                   </p>
-                </div>
-                <div
+                </RevealStep>
+                <RevealStep
+                  fromRight={!imageFirst}
                   className={`flex justify-center ${
                     imageFirst ? "sm:order-1" : "sm:order-2"
                   }`}
                 >
                   <StepIllustration variant={s.variant} rotate={s.rotate} />
-                </div>
+                </RevealStep>
               </div>
             );
           })}
         </section>
 
-        <section className="mx-auto max-w-4xl px-6">
-          <div className="rounded-2xl border border-navy/30 bg-navy/[0.06] px-8 py-6">
-            <p className="text-center font-serif text-lg italic sm:text-xl">
-              Human-approved by design — you&apos;re always the last check
-              before anything is sent.
-            </p>
-          </div>
-        </section>
+        <Reveal>
+          <section className="mx-auto max-w-4xl px-6">
+            <div className="rounded-2xl border border-navy/30 bg-navy/[0.06] px-8 py-6">
+              <p className="text-center font-serif text-lg italic sm:text-xl">
+                Human-approved by design — you&apos;re always the last check
+                before anything is sent.
+              </p>
+            </div>
+          </section>
+        </Reveal>
 
         <section className="mx-auto max-w-4xl px-6 py-20">
           <div className="grid gap-8 sm:grid-cols-2 sm:items-center">
-            <div>
+            <RevealStep>
               <h3 className="font-serif text-2xl font-medium">
                 Track performance at a glance
               </h3>
@@ -143,46 +154,49 @@ export default function LeadConversionAutomation() {
                 value — so you always know what&apos;s waiting and what
                 it&apos;s worth.
               </p>
-            </div>
-            <div className="flex justify-center">
+            </RevealStep>
+            <RevealStep fromRight className="flex justify-center">
               <StepIllustration variant="insights" rotate={-1.5} />
-            </div>
+            </RevealStep>
           </div>
         </section>
 
         <section className="mx-auto max-w-3xl px-6 py-20">
-          <h2 className="font-serif text-3xl font-medium tracking-tight sm:text-4xl">
-            Frequently asked questions
-          </h2>
-          <div className="mt-8 space-y-3">
+          <Reveal>
+            <h2 className="font-serif text-3xl font-medium tracking-tight sm:text-4xl">
+              Frequently asked questions
+            </h2>
+          </Reveal>
+          <RevealGroup className="mt-8 space-y-3">
             {faqs.map((f) => (
-              <details
-                key={f.q}
-                className="group rounded-xl border border-border bg-ivory-card px-6 py-5 transition open:border-navy/40 open:shadow-[0_0_30px_-14px_rgba(74,108,247,0.6)]"
-              >
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-medium marker:content-none">
-                  {f.q}
-                  <span className="shrink-0 text-ink/40 transition group-open:rotate-45 group-open:text-navy">
-                    +
-                  </span>
-                </summary>
-                <p className="mt-3 leading-relaxed text-ink/70">{f.a}</p>
-              </details>
+              <RevealItem key={f.q}>
+                <details className="group rounded-xl border border-border bg-ivory-card px-6 py-5 transition open:border-navy/40 open:shadow-[0_0_30px_-14px_rgba(74,108,247,0.6)]">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-medium marker:content-none">
+                    {f.q}
+                    <span className="shrink-0 text-ink/40 transition group-open:rotate-45 group-open:text-navy">
+                      +
+                    </span>
+                  </summary>
+                  <p className="mt-3 leading-relaxed text-ink/70">{f.a}</p>
+                </details>
+              </RevealItem>
             ))}
-          </div>
+          </RevealGroup>
         </section>
 
-        <section className="mx-auto max-w-3xl px-6 pb-24 text-center">
-          <h2 className="font-serif text-3xl font-medium tracking-tight sm:text-4xl">
-            Ready to stop losing leads to slow replies?
-          </h2>
-          <Link
-            href="/#contact"
-            className="mt-6 inline-block rounded-full bg-navy px-7 py-3.5 text-base font-medium text-white shadow-[0_0_25px_-6px_rgba(74,108,247,0.7)] transition hover:bg-navy-dark"
-          >
-            Book a free call
-          </Link>
-        </section>
+        <Reveal>
+          <section className="mx-auto max-w-3xl px-6 pb-24 text-center">
+            <h2 className="font-serif text-3xl font-medium tracking-tight sm:text-4xl">
+              Ready to stop losing leads to slow replies?
+            </h2>
+            <Link
+              href="/#contact"
+              className="mt-6 inline-block rounded-full bg-navy px-7 py-3.5 text-base font-medium text-white shadow-[0_0_25px_-6px_rgba(74,108,247,0.7)] transition hover:bg-navy-dark"
+            >
+              Book a free call
+            </Link>
+          </section>
+        </Reveal>
       </main>
       <Footer />
     </>

@@ -2,12 +2,13 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Problem from "@/components/Problem";
 import HowItWorks from "@/components/HowItWorks";
-import Demo from "@/components/Demo";
+import ProductShowcase from "@/components/ProductShowcase";
 import WhatWeBuild from "@/components/WhatWeBuild";
 import Benefits from "@/components/Benefits";
 import WhoItsFor from "@/components/WhoItsFor";
 import Pricing from "@/components/Pricing";
 import Contact from "@/components/Contact";
+import DiveInCta from "@/components/DiveInCta";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -18,11 +19,12 @@ export default function Home() {
         <Hero />
         <Problem />
         <HowItWorks />
-        <Demo />
+        <ProductShowcase />
         <WhatWeBuild />
         <Benefits />
         <WhoItsFor />
         <Pricing />
+        <DiveInCta />
         <Contact />
       </main>
       <Footer />

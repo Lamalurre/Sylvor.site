@@ -1,3 +1,8 @@
+"use client";
+
+import { motion } from "framer-motion";
+import Reveal from "./motion/Reveal";
+
 const plans = [
   {
     tier: "Setup",
@@ -51,20 +56,27 @@ export default function Pricing() {
           />
         </svg>
         <div className="relative grid gap-8 pt-4 sm:grid-cols-3">
-          {plans.map((p) => (
+          {plans.map((p, i) => (
             <div key={p.tier} className="relative">
               {p.highlight && (
-                <span className="absolute -top-3 left-1/2 z-10 -translate-x-1/2 rounded-full bg-amber px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-white shadow-[0_0_16px_-2px_rgba(217,146,42,0.7)]">
+                <span className="absolute -top-3 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap rounded-full bg-amber px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-white shadow-[0_0_16px_-2px_rgba(217,146,42,0.7)]">
                   Most popular
                 </span>
               )}
-              <div
+              <motion.div
+                initial={{ opacity: 0, y: 30, rotate: 0 }}
+                whileInView={{ opacity: 1, y: 0, rotate: p.rotate }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{
+                  duration: 0.6,
+                  delay: i * 0.12,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
                 className={`rounded-2xl border p-8 shadow-[0_20px_45px_-20px_rgba(0,0,0,0.6)] ${
                   p.highlight
                     ? "border-navy bg-ivory-card shadow-[0_0_35px_-8px_rgba(74,108,247,0.45)]"
                     : "border-border bg-ivory-card"
                 }`}
-                style={{ transform: `rotate(${p.rotate}deg)` }}
               >
                 <span
                   className={`text-xs font-semibold uppercase tracking-wide ${
@@ -83,14 +95,16 @@ export default function Pricing() {
                 <p className="mt-4 text-sm leading-relaxed text-ink/70">
                   {p.desc}
                 </p>
-              </div>
+              </motion.div>
             </div>
           ))}
         </div>
       </div>
-      <p className="mt-10 text-sm text-ink/50">
-        No long-term contract. Cancel anytime.
-      </p>
+      <Reveal delay={0.3}>
+        <p className="mt-10 text-sm text-ink/50">
+          No long-term contract. Cancel anytime.
+        </p>
+      </Reveal>
     </section>
   );
 }

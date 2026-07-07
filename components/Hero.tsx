@@ -1,4 +1,8 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { Sparkles, Tag, PenLine, CheckCircle2 } from "lucide-react";
+import RevealWords from "./motion/RevealWords";
 
 const chips = [
   { label: "Priced", icon: Tag, className: "left-2 top-6 -rotate-6 sm:left-4 sm:top-10" },
@@ -9,7 +13,12 @@ const chips = [
 export default function Hero() {
   return (
     <section className="mx-auto max-w-4xl px-6 pb-16 pt-16 text-center sm:pt-20">
-      <div className="relative mx-auto mb-6 flex h-52 w-52 items-center justify-center sm:h-60 sm:w-60">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.85 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+        className="relative mx-auto mb-6 flex h-52 w-52 items-center justify-center sm:h-60 sm:w-60"
+      >
         <div
           className="pulse-glow absolute inset-0 rounded-full"
           style={{
@@ -25,29 +34,42 @@ export default function Hero() {
             <Sparkles size={30} strokeWidth={1.5} />
           </span>
         </div>
-        {chips.map((c) => {
+        {chips.map((c, i) => {
           const Icon = c.icon;
           return (
-            <span
+            <motion.span
               key={c.label}
+              initial={{ opacity: 0, scale: 0.6 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.5 + i * 0.15, ease: [0.22, 1, 0.36, 1] }}
               className={`absolute inline-flex items-center gap-1.5 rounded-full border border-border bg-ivory-card px-3 py-1.5 text-xs font-medium text-ink/80 shadow-lg ${c.className}`}
             >
               <Icon size={13} strokeWidth={1.75} className="text-navy" />
               {c.label}
-            </span>
+            </motion.span>
           );
         })}
-      </div>
+      </motion.div>
 
       <h1 className="font-serif text-4xl font-medium leading-[1.1] tracking-tight sm:text-6xl">
-        Stop losing leads to slow replies.
+        <RevealWords text="Stop losing leads to slow replies." />
       </h1>
-      <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-ink/70 sm:text-xl">
+      <motion.p
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.9, ease: [0.22, 1, 0.36, 1] }}
+        className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-ink/70 sm:text-xl"
+      >
         LeadFlow reads your incoming inquiries, estimates pricing, flags
         what&apos;s missing, and drafts a ready-to-send reply — you stay in
         control of every message that goes out.
-      </p>
-      <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+      </motion.p>
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 1.05, ease: [0.22, 1, 0.36, 1] }}
+        className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
+      >
         <a
           href="#demo"
           className="w-full rounded-full bg-navy px-7 py-3.5 text-base font-medium text-white shadow-[0_0_25px_-6px_rgba(74,108,247,0.7)] transition hover:bg-navy-dark sm:w-auto"
@@ -60,7 +82,23 @@ export default function Hero() {
         >
           Book a free call
         </a>
-      </div>
+      </motion.div>
+      <motion.p
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 1.3 }}
+        className="mt-14 flex items-center justify-center gap-2 text-xs uppercase tracking-wide text-ink/35"
+      >
+        Scroll to explore
+        <motion.span
+          aria-hidden="true"
+          animate={{ y: [0, 4, 0] }}
+          transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+        >
+          ↓
+        </motion.span>
+      </motion.p>
+      <div className="grid-floor mt-4" aria-hidden="true" />
     </section>
   );
 }
