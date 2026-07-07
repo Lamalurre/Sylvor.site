@@ -1,21 +1,4 @@
-const frames = [
-  {
-    label: "1. Lead comes in",
-    caption: "Screenshot: raw inquiry as received (form/email/DM)",
-  },
-  {
-    label: "2. Priority + price flagged",
-    caption: "Screenshot: lead ranked, price estimated, missing info flagged",
-  },
-  {
-    label: "3. Reply drafted",
-    caption: "Screenshot: ready-to-send reply drafted in your voice",
-  },
-  {
-    label: "4. You approve and send",
-    caption: "Screenshot: one-click review and send",
-  },
-];
+import Link from "next/link";
 
 export default function Demo() {
   return (
@@ -30,24 +13,20 @@ export default function Demo() {
         <p className="mt-3 max-w-2xl text-ink/70">
           A lead being triaged, priced, and drafted — start to finish.
         </p>
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {frames.map((f) => (
-            <div
-              key={f.label}
-              className="flex aspect-[9/16] flex-col items-center justify-center gap-3 rounded-xl border-2 border-dashed border-ink/20 bg-ivory p-6 text-center"
-            >
-              <span className="text-sm font-semibold text-ink/50">
-                {f.label}
-              </span>
-              <span className="text-xs leading-relaxed text-ink/40">
-                {f.caption}
-              </span>
-              <span className="mt-2 rounded-full border border-ink/15 px-3 py-1 text-[11px] uppercase tracking-wide text-ink/40">
-                Placeholder
-              </span>
-            </div>
-          ))}
+        <div className="mt-10 overflow-hidden rounded-2xl border border-border">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/reply-drafted.png"
+            alt="LeadFlow drafting a ready-to-send reply next to the original inquiry"
+            className="w-full"
+          />
         </div>
+        <Link
+          href="/lead-conversion-automation"
+          className="mt-6 inline-flex items-center gap-1 font-medium text-navy hover:text-navy-dark"
+        >
+          See the full flow →
+        </Link>
       </div>
     </section>
   );

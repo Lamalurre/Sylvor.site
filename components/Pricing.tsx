@@ -16,8 +16,11 @@ export default function Pricing() {
             (form/email forwarding).
           </p>
         </div>
-        <div className="rounded-2xl border-2 border-bronze bg-ivory-card p-8">
-          <span className="text-xs font-semibold uppercase tracking-wide text-bronze">
+        <div className="relative rounded-2xl border-2 border-navy bg-ivory-card p-8">
+          <span className="absolute -top-3 right-8 rounded-full bg-amber px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-white">
+            Most popular
+          </span>
+          <span className="text-xs font-semibold uppercase tracking-wide text-navy">
             Standard
           </span>
           <p className="mt-3 font-serif text-4xl font-medium">

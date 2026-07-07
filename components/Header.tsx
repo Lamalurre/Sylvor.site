@@ -18,7 +18,7 @@ export default function Header() {
         </nav>
         <a
           href="#contact"
-          className="rounded-full bg-bronze px-4 py-2 text-sm font-medium text-white transition hover:bg-bronze-dark"
+          className="rounded-full bg-navy px-4 py-2 text-sm font-medium text-white transition hover:bg-navy-dark"
         >
           Book a free call
         </a>

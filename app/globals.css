@@ -5,8 +5,10 @@
   --color-ivory: #f7f4ee;
   --color-ivory-card: #fbf9f5;
   --color-border: #e4ddcf;
-  --color-bronze: #a8843f;
-  --color-bronze-dark: #8c6d32;
+  --color-navy: #1b2a4a;
+  --color-navy-dark: #142038;
+  --color-amber: #c9821a;
+  --color-green: #2f7a4f;
 }
 
 @theme inline {
@@ -14,8 +16,10 @@
   --color-ivory: var(--color-ivory);
   --color-ivory-card: var(--color-ivory-card);
   --color-border: var(--color-border);
-  --color-bronze: var(--color-bronze);
-  --color-bronze-dark: var(--color-bronze-dark);
+  --color-navy: var(--color-navy);
+  --color-navy-dark: var(--color-navy-dark);
+  --color-amber: var(--color-amber);
+  --color-green: var(--color-green);
   --font-serif: var(--font-fraunces);
   --font-sans: var(--font-inter);
 }

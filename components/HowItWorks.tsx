@@ -25,7 +25,7 @@ export default function HowItWorks() {
       <div className="mt-14 grid gap-10 sm:grid-cols-3">
         {steps.map((s) => (
           <div key={s.n}>
-            <span className="font-serif text-4xl text-bronze">{s.n}</span>
+            <span className="font-serif text-4xl text-navy">{s.n}</span>
             <h3 className="mt-4 text-lg font-semibold leading-snug">
               {s.title}
             </h3>
@@ -33,7 +33,7 @@ export default function HowItWorks() {
           </div>
         ))}
       </div>
-      <div className="mt-14 rounded-2xl border border-bronze/30 bg-bronze/[0.06] px-8 py-6">
+      <div className="mt-14 rounded-2xl border border-navy/30 bg-navy/[0.06] px-8 py-6">
         <p className="text-center font-serif text-lg italic sm:text-xl">
           Human-approved by design — you&apos;re always the last check before
           anything is sent.

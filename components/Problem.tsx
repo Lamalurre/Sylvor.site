@@ -12,7 +12,7 @@ export default function Problem() {
         <ul className="grid gap-6 sm:grid-cols-2">
           {problems.map((p) => (
             <li key={p} className="flex gap-3 text-lg leading-snug">
-              <span className="mt-1 text-bronze">—</span>
+              <span className="mt-1 text-navy">—</span>
               <span>{p}</span>
             </li>
           ))}

@@ -2,8 +2,7 @@
 
 import { useState } from "react";
 
-// TODO: replace with real contact email
-const CONTACT_EMAIL = "hello@example.com";
+const CONTACT_EMAIL = "Hello.leadflow1@outlook.com";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -66,7 +65,7 @@ export default function Contact() {
               name="name"
               type="text"
               required
-              className="mt-1.5 w-full rounded-lg border border-border bg-ivory px-4 py-2.5 outline-none focus:border-bronze"
+              className="mt-1.5 w-full rounded-lg border border-border bg-ivory px-4 py-2.5 outline-none focus:border-navy"
             />
           </div>
           <div>
@@ -78,7 +77,7 @@ export default function Contact() {
               name="email"
               type="email"
               required
-              className="mt-1.5 w-full rounded-lg border border-border bg-ivory px-4 py-2.5 outline-none focus:border-bronze"
+              className="mt-1.5 w-full rounded-lg border border-border bg-ivory px-4 py-2.5 outline-none focus:border-navy"
             />
           </div>
         </div>
@@ -91,7 +90,7 @@ export default function Contact() {
             name="businessType"
             type="text"
             placeholder="e.g. residential cleaning, HVAC, marketing agency"
-            className="mt-1.5 w-full rounded-lg border border-border bg-ivory px-4 py-2.5 outline-none focus:border-bronze"
+            className="mt-1.5 w-full rounded-lg border border-border bg-ivory px-4 py-2.5 outline-none focus:border-navy"
           />
         </div>
         <div>
@@ -103,18 +102,18 @@ export default function Contact() {
             name="message"
             required
             rows={4}
-            className="mt-1.5 w-full rounded-lg border border-border bg-ivory px-4 py-2.5 outline-none focus:border-bronze"
+            className="mt-1.5 w-full rounded-lg border border-border bg-ivory px-4 py-2.5 outline-none focus:border-navy"
           />
         </div>
         <button
           type="submit"
           disabled={status === "submitting"}
-          className="w-full rounded-full bg-bronze px-7 py-3.5 text-base font-medium text-white transition hover:bg-bronze-dark disabled:opacity-60"
+          className="w-full rounded-full bg-navy px-7 py-3.5 text-base font-medium text-white transition hover:bg-navy-dark disabled:opacity-60"
         >
           {status === "submitting" ? "Sending..." : "Send message"}
         </button>
         {status === "success" && (
-          <p className="text-center text-sm text-bronze-dark">
+          <p className="text-center text-sm text-green">
             Thanks — your message has been sent. We&apos;ll be in touch soon.
           </p>
         )}

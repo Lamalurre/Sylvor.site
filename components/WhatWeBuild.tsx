@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const alsoAvailable = [
   { name: "Chatbots", desc: "Website chat that qualifies and routes visitors." },
   { name: "Support Automation", desc: "AI-drafted responses to repeat support questions." },
@@ -10,8 +12,11 @@ export default function WhatWeBuild() {
       <h2 className="font-serif text-3xl font-medium tracking-tight sm:text-4xl">
         What we build
       </h2>
-      <div className="mt-10 rounded-2xl border border-border bg-ivory-card p-8">
-        <span className="text-xs font-semibold uppercase tracking-wide text-bronze">
+      <Link
+        href="/lead-conversion-automation"
+        className="mt-10 block rounded-2xl border border-border bg-ivory-card p-8 transition hover:border-navy/40 hover:shadow-sm"
+      >
+        <span className="text-xs font-semibold uppercase tracking-wide text-navy">
           Flagship
         </span>
         <h3 className="mt-2 font-serif text-2xl font-medium">
@@ -23,7 +28,10 @@ export default function WhatWeBuild() {
           turned into a ready-to-send reply, with you approving the final
           message before it ever reaches a customer.
         </p>
-      </div>
+        <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-navy">
+          See how it works →
+        </span>
+      </Link>
       <div className="mt-8 grid gap-6 sm:grid-cols-3">
         {alsoAvailable.map((item) => (
           <div key={item.name}>
