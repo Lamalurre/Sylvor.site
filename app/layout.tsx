@@ -28,10 +28,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fraunces.variable} ${inter.variable} h-full`}
+      className={`${fraunces.variable} ${inter.variable} h-full dark`}
     >
-      <body className="min-h-full flex flex-col bg-ivory text-ink antialiased">
-        {children}
+      <body className="min-h-full flex flex-col bg-ivory text-ink antialiased relative">
+        <div className="bg-glow-field" aria-hidden="true" />
+        <div className="relative z-10 flex min-h-full flex-1 flex-col">
+          {children}
+        </div>
       </body>
     </html>
   );

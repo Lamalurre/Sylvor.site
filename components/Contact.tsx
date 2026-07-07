@@ -51,10 +51,16 @@ export default function Contact() {
         </a>
       </div>
 
-      <form
-        onSubmit={handleSubmit}
-        className="mt-12 space-y-5 rounded-2xl border border-border bg-ivory-card p-8"
-      >
+      <div className="relative mt-12">
+        <div
+          className="absolute inset-0 rounded-2xl border border-navy/20 bg-ivory-card/60"
+          style={{ transform: "rotate(-2deg)" }}
+          aria-hidden="true"
+        />
+        <form
+          onSubmit={handleSubmit}
+          className="relative space-y-5 rounded-2xl border border-border bg-ivory-card p-8 shadow-[0_25px_50px_-25px_rgba(0,0,0,0.7)]"
+        >
         <div className="grid gap-5 sm:grid-cols-2">
           <div>
             <label htmlFor="name" className="block text-sm font-medium">
@@ -108,7 +114,7 @@ export default function Contact() {
         <button
           type="submit"
           disabled={status === "submitting"}
-          className="w-full rounded-full bg-navy px-7 py-3.5 text-base font-medium text-white transition hover:bg-navy-dark disabled:opacity-60"
+          className="w-full rounded-full bg-navy px-7 py-3.5 text-base font-medium text-white shadow-[0_0_25px_-6px_rgba(74,108,247,0.7)] transition hover:bg-navy-dark disabled:opacity-60"
         >
           {status === "submitting" ? "Sending..." : "Send message"}
         </button>
@@ -126,7 +132,8 @@ export default function Contact() {
             .
           </p>
         )}
-      </form>
+        </form>
+      </div>
     </section>
   );
 }

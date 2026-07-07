@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Inbox, Sparkles, PenLine, CheckCircle2 } from "lucide-react";
+import StepIllustration from "@/components/StepIllustration";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -12,35 +12,27 @@ export const metadata: Metadata = {
 
 const steps = [
   {
-    icon: Inbox,
+    variant: "inbox" as const,
     title: "Leads come in the way they already do.",
     body: "Website form, forwarded email, DM — no new tools to learn. Every inquiry lands in one place, in the order it arrives, so nothing sits buried in an inbox.",
-    image: "/images/steps/step-lead-in.png",
-    alt: "A lead card showing name, inquiry summary, priority, and estimated price",
     rotate: -3,
   },
   {
-    icon: Sparkles,
+    variant: "price" as const,
     title: "AI reads and prepares each one.",
     body: "Estimated price based on your rates, and priority ranked so the urgent ones surface first.",
-    image: "/images/steps/step-priority-price.png",
-    alt: "Priority badge and estimated price panel for a lead",
     rotate: 2,
   },
   {
-    icon: PenLine,
+    variant: "draft" as const,
     title: "A reply gets drafted in your voice.",
     body: "Missing info flagged, and a ready-to-send reply drafted from the original inquiry — so you're editing, not writing from scratch.",
-    image: "/images/steps/step-reply-draft.png",
-    alt: "A drafted reply shown in a text box, ready to copy and send",
     rotate: -2,
   },
   {
-    icon: CheckCircle2,
+    variant: "approve" as const,
     title: "You review and send.",
     body: "Nothing reaches a customer without your approval. Edit the price, tweak the tone, or send as-is — no risk of the AI quoting the wrong number or sending an off-tone message under your name.",
-    image: "/images/steps/step-approve.png",
-    alt: "Approval buttons to move a lead forward, including Mark as won",
     rotate: 3,
   },
 ];
@@ -105,22 +97,14 @@ export default function LeadConversionAutomation() {
 
         <section className="mx-auto max-w-5xl space-y-28 px-6 py-16 sm:space-y-36">
           {steps.map((s, i) => {
-            const Icon = s.icon;
             const imageFirst = i % 2 === 1;
             return (
               <div
                 key={s.title}
-                className="grid items-center gap-10 sm:grid-cols-2 sm:gap-16"
+                className="grid items-center gap-14 sm:grid-cols-2 sm:gap-16"
               >
-                <div
-                  className={
-                    imageFirst ? "sm:order-2" : "sm:order-1"
-                  }
-                >
-                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-navy/10 text-navy">
-                    <Icon size={22} strokeWidth={1.75} />
-                  </span>
-                  <h2 className="mt-4 text-2xl font-semibold leading-snug">
+                <div className={imageFirst ? "sm:order-2" : "sm:order-1"}>
+                  <h2 className="text-2xl font-semibold leading-snug">
                     {s.title}
                   </h2>
                   <p className="mt-3 max-w-md leading-relaxed text-ink/70">
@@ -132,17 +116,7 @@ export default function LeadConversionAutomation() {
                     imageFirst ? "sm:order-1" : "sm:order-2"
                   }`}
                 >
-                  <div
-                    className="w-full max-w-md rounded-2xl border border-border bg-white p-3 shadow-xl"
-                    style={{ transform: `rotate(${s.rotate}deg)` }}
-                  >
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={s.image}
-                      alt={s.alt}
-                      className="w-full rounded-lg"
-                    />
-                  </div>
+                  <StepIllustration variant={s.variant} rotate={s.rotate} />
                 </div>
               </div>
             );
@@ -170,13 +144,8 @@ export default function LeadConversionAutomation() {
                 it&apos;s worth.
               </p>
             </div>
-            <div className="overflow-hidden rounded-xl border border-border">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/images/insights.png"
-                alt="Insights dashboard showing lead volume, priority distribution, and response time"
-                className="w-full"
-              />
+            <div className="flex justify-center">
+              <StepIllustration variant="insights" rotate={-1.5} />
             </div>
           </div>
         </section>
@@ -185,12 +154,15 @@ export default function LeadConversionAutomation() {
           <h2 className="font-serif text-3xl font-medium tracking-tight sm:text-4xl">
             Frequently asked questions
           </h2>
-          <div className="mt-8 divide-y divide-border rounded-2xl border border-border bg-ivory-card">
+          <div className="mt-8 space-y-3">
             {faqs.map((f) => (
-              <details key={f.q} className="group px-6 py-5">
+              <details
+                key={f.q}
+                className="group rounded-xl border border-border bg-ivory-card px-6 py-5 transition open:border-navy/40 open:shadow-[0_0_30px_-14px_rgba(74,108,247,0.6)]"
+              >
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-medium marker:content-none">
                   {f.q}
-                  <span className="text-ink/40 transition group-open:rotate-45">
+                  <span className="shrink-0 text-ink/40 transition group-open:rotate-45 group-open:text-navy">
                     +
                   </span>
                 </summary>
@@ -206,7 +178,7 @@ export default function LeadConversionAutomation() {
           </h2>
           <Link
             href="/#contact"
-            className="mt-6 inline-block rounded-full bg-navy px-7 py-3.5 text-base font-medium text-white transition hover:bg-navy-dark"
+            className="mt-6 inline-block rounded-full bg-navy px-7 py-3.5 text-base font-medium text-white shadow-[0_0_25px_-6px_rgba(74,108,247,0.7)] transition hover:bg-navy-dark"
           >
             Book a free call
           </Link>

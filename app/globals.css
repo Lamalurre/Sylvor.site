@@ -1,14 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  --color-ink: #1a1a1a;
-  --color-ivory: #f7f4ee;
-  --color-ivory-card: #fbf9f5;
-  --color-border: #e4ddcf;
-  --color-navy: #1b2a4a;
-  --color-navy-dark: #142038;
-  --color-amber: #c9821a;
-  --color-green: #2f7a4f;
+  /* base surface + text — "ivory/ink" names kept for compatibility with
+     existing components, repurposed for the dark theme */
+  --color-ink: #f2f3f5;
+  --color-ivory: #0b0e16;
+  --color-ivory-card: #131826;
+  --color-border: rgba(255, 255, 255, 0.09);
+
+  /* accent family */
+  --color-navy: #4a6cf7;
+  --color-navy-dark: #3654d1;
+  --color-navy-deep: #1b2a4a;
+  --color-amber: #d9922a;
+  --color-amber-dark: #b97a1e;
+  --color-green: #3fa36b;
+  --color-green-dark: #2f7a4f;
 }
 
 @theme inline {
@@ -18,8 +25,11 @@
   --color-border: var(--color-border);
   --color-navy: var(--color-navy);
   --color-navy-dark: var(--color-navy-dark);
+  --color-navy-deep: var(--color-navy-deep);
   --color-amber: var(--color-amber);
+  --color-amber-dark: var(--color-amber-dark);
   --color-green: var(--color-green);
+  --color-green-dark: var(--color-green-dark);
   --font-serif: var(--font-fraunces);
   --font-sans: var(--font-inter);
 }
@@ -29,7 +39,80 @@ html {
 }
 
 body {
-  background: var(--color-ivory);
+  background-color: var(--color-ivory);
   color: var(--color-ink);
   font-family: var(--font-sans);
+  background-image:
+    radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 28px 28px;
+  background-position: -14px -14px;
+}
+
+/* a handful of soft glowing "stars" scattered across the page, fixed so
+   they don't shift as content scrolls */
+.bg-glow-field {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bg-glow-field::before,
+.bg-glow-field::after {
+  content: "";
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(60px);
+}
+
+.bg-glow-field::before {
+  top: 8%;
+  left: 12%;
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(circle, rgba(74, 108, 247, 0.22), transparent 70%);
+}
+
+.bg-glow-field::after {
+  top: 55%;
+  right: 8%;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(217, 146, 42, 0.14), transparent 70%);
+}
+
+.glow-dot {
+  position: absolute;
+  border-radius: 9999px;
+  background: currentColor;
+  box-shadow: 0 0 12px 2px currentColor;
+  opacity: 0.5;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.25; }
+  50% { opacity: 0.75; }
+}
+
+.glow-dot-twinkle {
+  animation: twinkle 4s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.35; transform: scale(1); }
+  50% { opacity: 0.55; transform: scale(1.06); }
+}
+
+.pulse-glow {
+  animation: pulse-glow 5s ease-in-out infinite;
+}
+
+/* tilted, glowing card shell used across pricing / steps / benefits */
+.tilt-card {
+  position: relative;
+  border-radius: 1rem;
+  border: 1px solid var(--color-border);
+  background: var(--color-ivory-card);
+  box-shadow: 0 20px 45px -20px rgba(0, 0, 0, 0.6);
 }
