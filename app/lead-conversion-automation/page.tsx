@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Inbox, Sparkles, PenLine, CheckCircle2 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -11,43 +12,70 @@ export const metadata: Metadata = {
 
 const steps = [
   {
-    n: "01",
+    icon: Inbox,
     title: "Leads come in the way they already do.",
     body: "Website form, forwarded email, DM — no new tools to learn. Every inquiry lands in one place, in the order it arrives, so nothing sits buried in an inbox.",
-    image: "/images/leads-list.png",
-    alt: "List of incoming leads, each showing priority, estimated price, and status",
+    image: "/images/steps/step-lead-in.png",
+    alt: "A lead card showing name, inquiry summary, priority, and estimated price",
+    rotate: -3,
   },
   {
-    n: "02",
+    icon: Sparkles,
     title: "AI reads and prepares each one.",
-    body: "Estimated price based on your rates, missing info flagged, priority ranked, and a ready-to-send reply drafted in your voice — with the original inquiry kept alongside it so you can check the draft against what the customer actually asked.",
-    image: "/images/reply-drafted.png",
-    alt: "A drafted reply shown next to the customer's original inquiry, with estimated price and missing information flagged",
+    body: "Estimated price based on your rates, and priority ranked so the urgent ones surface first.",
+    image: "/images/steps/step-priority-price.png",
+    alt: "Priority badge and estimated price panel for a lead",
+    rotate: 2,
   },
   {
-    n: "03",
+    icon: PenLine,
+    title: "A reply gets drafted in your voice.",
+    body: "Missing info flagged, and a ready-to-send reply drafted from the original inquiry — so you're editing, not writing from scratch.",
+    image: "/images/steps/step-reply-draft.png",
+    alt: "A drafted reply shown in a text box, ready to copy and send",
+    rotate: -2,
+  },
+  {
+    icon: CheckCircle2,
     title: "You review and send.",
     body: "Nothing reaches a customer without your approval. Edit the price, tweak the tone, or send as-is — no risk of the AI quoting the wrong number or sending an off-tone message under your name.",
-    image: "/images/lead-detail-top.png",
-    alt: "Lead detail view with priority, status, and approval actions",
+    image: "/images/steps/step-approve.png",
+    alt: "Approval buttons to move a lead forward, including Mark as won",
+    rotate: 3,
   },
 ];
 
-function StepImage({ image, alt }: { image: string; alt: string }) {
-  if (!image) {
-    return (
-      <div className="flex aspect-video items-center justify-center rounded-xl border-2 border-dashed border-ink/20 bg-ivory-card">
-        <span className="text-sm text-ink/40">Screenshot pending</span>
-      </div>
-    );
-  }
-  return (
-    <div className="overflow-hidden rounded-xl border border-border">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={image} alt={alt} className="w-full" />
-    </div>
-  );
-}
+const faqs = [
+  {
+    q: "Do I need to switch systems to use LeadFlow?",
+    a: "No. LeadFlow connects to your existing intake — website form or forwarded email — so leads keep arriving exactly the way they already do. There's nothing new for you or your team to learn.",
+  },
+  {
+    q: "Does the AI send messages automatically?",
+    a: "No. Every reply is drafted for you, but nothing goes out until you approve it. You're always the last check before a message reaches a customer.",
+  },
+  {
+    q: "What does it cost?",
+    a: (
+      <>
+        A one-time $499 setup, then $59/mo for up to 100 leads and $79/mo
+        above that — no long-term contract. See the full breakdown in{" "}
+        <Link href="/#pricing" className="text-navy underline">
+          Pricing
+        </Link>
+        .
+      </>
+    ),
+  },
+  {
+    q: "How long does it take to get started?",
+    a: "Most setups are live within a few days of connecting your existing intake — no migration and no downtime for your current process.",
+  },
+  {
+    q: "Does this work for my type of business?",
+    a: "It's built for service businesses with repeat inbound inquiries — cleaning services, trades, agencies, and local service providers. If that sounds like you, it's a fit.",
+  },
+];
 
 export default function LeadConversionAutomation() {
   return (
@@ -75,21 +103,50 @@ export default function LeadConversionAutomation() {
           </p>
         </section>
 
-        <section className="mx-auto max-w-4xl space-y-20 px-6 py-12">
-          {steps.map((s) => (
-            <div key={s.n}>
-              <StepImage image={s.image} alt={s.alt} />
-              <div className="mt-6">
-                <span className="font-serif text-2xl text-navy">{s.n}</span>
-                <h2 className="mt-2 text-xl font-semibold leading-snug">
-                  {s.title}
-                </h2>
-                <p className="mt-2 max-w-2xl leading-relaxed text-ink/70">
-                  {s.body}
-                </p>
+        <section className="mx-auto max-w-5xl space-y-28 px-6 py-16 sm:space-y-36">
+          {steps.map((s, i) => {
+            const Icon = s.icon;
+            const imageFirst = i % 2 === 1;
+            return (
+              <div
+                key={s.title}
+                className="grid items-center gap-10 sm:grid-cols-2 sm:gap-16"
+              >
+                <div
+                  className={
+                    imageFirst ? "sm:order-2" : "sm:order-1"
+                  }
+                >
+                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-navy/10 text-navy">
+                    <Icon size={22} strokeWidth={1.75} />
+                  </span>
+                  <h2 className="mt-4 text-2xl font-semibold leading-snug">
+                    {s.title}
+                  </h2>
+                  <p className="mt-3 max-w-md leading-relaxed text-ink/70">
+                    {s.body}
+                  </p>
+                </div>
+                <div
+                  className={`flex justify-center ${
+                    imageFirst ? "sm:order-1" : "sm:order-2"
+                  }`}
+                >
+                  <div
+                    className="w-full max-w-md rounded-2xl border border-border bg-white p-3 shadow-xl"
+                    style={{ transform: `rotate(${s.rotate}deg)` }}
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={s.image}
+                      alt={s.alt}
+                      className="w-full rounded-lg"
+                    />
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </section>
 
         <section className="mx-auto max-w-4xl px-6">
@@ -113,10 +170,33 @@ export default function LeadConversionAutomation() {
                 it&apos;s worth.
               </p>
             </div>
-            <StepImage
-              image="/images/insights.png"
-              alt="Insights dashboard showing lead volume, priority distribution, and response time"
-            />
+            <div className="overflow-hidden rounded-xl border border-border">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/insights.png"
+                alt="Insights dashboard showing lead volume, priority distribution, and response time"
+                className="w-full"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section className="mx-auto max-w-3xl px-6 py-20">
+          <h2 className="font-serif text-3xl font-medium tracking-tight sm:text-4xl">
+            Frequently asked questions
+          </h2>
+          <div className="mt-8 divide-y divide-border rounded-2xl border border-border bg-ivory-card">
+            {faqs.map((f) => (
+              <details key={f.q} className="group px-6 py-5">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-medium marker:content-none">
+                  {f.q}
+                  <span className="text-ink/40 transition group-open:rotate-45">
+                    +
+                  </span>
+                </summary>
+                <p className="mt-3 leading-relaxed text-ink/70">{f.a}</p>
+              </details>
+            ))}
           </div>
         </section>
 
