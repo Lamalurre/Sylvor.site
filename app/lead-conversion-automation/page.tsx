@@ -14,7 +14,7 @@ const steps = [
     n: "01",
     title: "Leads come in the way they already do.",
     body: "Website form, forwarded email, DM — no new tools to learn. Every inquiry lands in one place, in the order it arrives, so nothing sits buried in an inbox.",
-    image: "",
+    image: "/images/leads-list.png",
     alt: "List of incoming leads, each showing priority, estimated price, and status",
   },
   {
@@ -28,7 +28,7 @@ const steps = [
     n: "03",
     title: "You review and send.",
     body: "Nothing reaches a customer without your approval. Edit the price, tweak the tone, or send as-is — no risk of the AI quoting the wrong number or sending an off-tone message under your name.",
-    image: "",
+    image: "/images/lead-detail-top.png",
     alt: "Lead detail view with priority, status, and approval actions",
   },
 ];
