@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import StepIllustration from "@/components/StepIllustration";
+import ROICalculator from "@/components/ROICalculator";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Reveal from "@/components/motion/Reveal";
@@ -99,6 +100,10 @@ export default function LeadConversionAutomation() {
             </p>
           </section>
         </Reveal>
+
+        <section className="px-6 pb-8">
+          <ROICalculator />
+        </section>
 
         <section className="mx-auto max-w-5xl space-y-28 px-6 py-16 sm:space-y-36">
           {steps.map((s, i) => {

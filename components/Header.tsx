@@ -14,6 +14,9 @@ export default function Header() {
           <Link href="/#pricing" className="hover:text-ink">
             Priser
           </Link>
+          <Link href="/blogg" className="hover:text-ink">
+            Blogg
+          </Link>
           <Link href="/#contact" className="hover:text-ink">
             Kontakt
           </Link>

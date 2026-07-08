@@ -39,6 +39,15 @@ export default function Pricing() {
       <h2 className="font-serif text-3xl font-medium tracking-tight sm:text-4xl">
         Priser
       </h2>
+      <p className="mt-3 max-w-2xl text-ink/60">
+        Priser för Första svaret — vår kärntjänst och den enda tjänsten som
+        går att köpa direkt idag. Chattbotar, kundtjänstautomation och
+        receptionstjänster offereras separat —{" "}
+        <a href="/#contact" className="text-navy underline">
+          kontakta oss
+        </a>
+        .
+      </p>
       <div className="relative mt-16">
         <svg
           className="pointer-events-none absolute left-0 top-1/2 hidden w-full -translate-y-1/2 sm:block"
