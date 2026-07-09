@@ -32,10 +32,11 @@ export default function ROICalculator() {
         </span>
 
         <h2 className="font-serif text-2xl font-medium sm:text-3xl">
-          Vad kostar missade förfrågningar dig?
+          Hur mycket mer kan du tjäna?
         </h2>
         <p className="mt-2 text-ink/60">
-          Justera siffrorna nedan efter din verksamhet.
+          Justera siffrorna efter din verksamhet och se den potentiella
+          extra intäkten.
         </p>
 
         <div className="mt-8 space-y-7">
@@ -120,9 +121,17 @@ export default function ROICalculator() {
             </p>
           </div>
         </motion.div>
-        <p className="mt-3 text-xs text-ink/40">
-          Räkneexempel baserat på dina antaganden — inte en garanti.
-        </p>
+        <div className="mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-border pt-5">
+          <p className="text-xs text-ink/40">
+            Räkneexempel baserat på dina antaganden — inte en garanti.
+          </p>
+          <a
+            href="#pricing"
+            className="whitespace-nowrap rounded-full bg-navy px-4 py-2 text-xs font-semibold text-white shadow-[0_0_16px_-4px_rgba(74,108,247,0.7)] transition hover:bg-navy-dark"
+          >
+            Sylvor från 449 kr/mån
+          </a>
+        </div>
       </div>
     </Reveal>
   );

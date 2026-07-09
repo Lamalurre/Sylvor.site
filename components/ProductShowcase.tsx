@@ -7,9 +7,11 @@ import StepIllustration from "./StepIllustration";
 import Reveal from "./motion/Reveal";
 
 const tabs = [
-  { label: "Inkorg", variant: "inbox" as const },
-  { label: "Prioritet & pris", variant: "price" as const },
-  { label: "Svarsutkast", variant: "draft" as const },
+  { label: "Lead kommer in", variant: "inbox" as const },
+  { label: "Säkert autosvar", variant: "autoreply" as const },
+  { label: "AI-sammanfattning", variant: "summary" as const },
+  { label: "Saknad information", variant: "missing" as const },
+  { label: "Svarsförslag", variant: "draft" as const },
   { label: "Godkänn & skicka", variant: "approve" as const },
 ];
 
@@ -27,9 +29,8 @@ export default function ProductShowcase() {
             Se det i praktiken
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-ink/70">
-            En förfrågan som prioriteras, prissätts och besvaras — från
-            start till mål. Varje steg granskas av dig innan något når
-            kunden.
+            Ett lead från första sekunden till skickat svar. Varje steg
+            granskas av dig innan något når kunden.
           </p>
         </Reveal>
 

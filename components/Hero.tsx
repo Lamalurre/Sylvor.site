@@ -5,7 +5,7 @@ import { Sparkles, Tag, PenLine, CheckCircle2 } from "lucide-react";
 import RevealWords from "./motion/RevealWords";
 
 const chips = [
-  { label: "Prissatt", icon: Tag, className: "left-2 top-6 -rotate-6 sm:left-4 sm:top-10" },
+  { label: "Analyserat", icon: Tag, className: "left-2 top-6 -rotate-6 sm:left-4 sm:top-10" },
   { label: "Utkast", icon: PenLine, className: "right-0 top-0 rotate-6 sm:right-2 sm:top-4" },
   { label: "Godkänt", icon: CheckCircle2, className: "bottom-2 left-1/2 -translate-x-1/2 rotate-3" },
 ];
@@ -60,10 +60,9 @@ export default function Hero() {
         transition={{ duration: 0.6, delay: 0.9, ease: [0.22, 1, 0.36, 1] }}
         className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-ink/70 sm:text-xl"
       >
-        Sylvor fångar upp kundernas förfrågningar, prioriterar dem, tar fram
-        ett snabbt pris-utkast och skriver ett svarsförslag — innan du ens
-        hunnit öppna ditt offertverktyg. Du godkänner alltid innan något
-        skickas.
+        Sylvor läser dina inkommande leads, skickar ett säkert autosvar
+        direkt, och tar fram ett svarsförslag du godkänner innan det
+        skickas. Inga leads glöms bort, inget skickas utan din koll.
       </motion.p>
       <motion.div
         initial={{ opacity: 0, y: 16 }}
@@ -72,16 +71,16 @@ export default function Hero() {
         className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
       >
         <a
-          href="#demo"
+          href="#kom-igang"
           className="w-full rounded-full bg-navy px-7 py-3.5 text-base font-medium text-white shadow-[0_0_25px_-6px_rgba(74,108,247,0.7)] transition hover:bg-navy-dark sm:w-auto"
         >
-          Se hur det funkar
+          Starta 7 dagar gratis
         </a>
         <a
-          href="#contact"
+          href="#demo"
           className="w-full rounded-full border border-ink/20 px-7 py-3.5 text-base font-medium text-ink transition hover:border-ink/40 hover:bg-ink/5 sm:w-auto"
         >
-          Boka ett gratis samtal
+          Se hur det fungerar
         </a>
       </motion.div>
       <motion.p

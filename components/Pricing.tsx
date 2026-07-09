@@ -8,8 +8,8 @@ const plans = [
     tier: "Bas",
     price: "449 kr",
     suffix: "/mån",
-    period: "upp till 50 förfrågningar/månad",
-    desc: "E-post- och formulärintag, med ett grundläggande pris-utkast för varje förfrågan.",
+    period: "50 leads/mån · 1 användare",
+    desc: "E-post- och formulärintag, med grundläggande AI-svarsförslag för varje lead.",
     rotate: -2,
     highlight: false,
   },
@@ -17,17 +17,17 @@ const plans = [
     tier: "Standard",
     price: "799 kr",
     suffix: "/mån",
-    period: "upp till 200 förfrågningar/månad",
-    desc: "SMS-notiser, ROT-avdragskalkyl inkluderad, och upp till 3 användare.",
+    period: "200 leads/mån · 3 användare",
+    desc: "SMS-notiser, snabbare svarstider och upp till 3 användare.",
     rotate: 0,
     highlight: true,
   },
   {
     tier: "Firma",
-    price: "1 490 kr",
+    price: "1 499 kr",
     suffix: "/mån",
-    period: "obegränsat antal förfrågningar",
-    desc: "Obegränsade användare, prioriterad support och anpassade prislistor per yrkeskategori.",
+    period: "högre volym (fair use) · fler användare",
+    desc: "Obegränsade användare, prioriterad support och anpassade arbetsflöden för ditt team.",
     rotate: 2,
     highlight: false,
   },
@@ -105,6 +105,16 @@ export default function Pricing() {
                 <p className="mt-4 text-sm leading-relaxed text-ink/70">
                   {p.desc}
                 </p>
+                <a
+                  href="#kom-igang"
+                  className={`mt-6 block rounded-full px-5 py-2.5 text-center text-sm font-medium transition ${
+                    p.highlight
+                      ? "bg-navy text-white shadow-[0_0_20px_-6px_rgba(74,108,247,0.7)] hover:bg-navy-dark"
+                      : "border border-ink/20 text-ink hover:border-ink/40 hover:bg-ink/5"
+                  }`}
+                >
+                  Starta 7 dagar gratis
+                </a>
               </motion.div>
             </div>
           ))}

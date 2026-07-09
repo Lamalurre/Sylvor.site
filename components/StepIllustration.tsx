@@ -6,13 +6,27 @@ import {
   BarChart3,
   Send,
   TrendingUp,
+  ShieldCheck,
+  Lightbulb,
+  ListChecks,
   type LucideIcon,
 } from "lucide-react";
 
-type Variant = "inbox" | "price" | "draft" | "approve" | "insights";
+type Variant =
+  | "inbox"
+  | "autoreply"
+  | "summary"
+  | "missing"
+  | "price"
+  | "draft"
+  | "approve"
+  | "insights";
 
 const ICONS: Record<Variant, LucideIcon> = {
   inbox: Inbox,
+  autoreply: ShieldCheck,
+  summary: Lightbulb,
+  missing: ListChecks,
   price: Tag,
   draft: PenLine,
   approve: CheckCircle2,
@@ -29,6 +43,27 @@ const ACCENTS: Record<
     glow: "0 0 28px -6px rgba(74,108,247,0.55)",
     border: "border-navy/30",
     rgb: "74,108,247",
+  },
+  autoreply: {
+    text: "text-navy",
+    bg: "bg-navy",
+    glow: "0 0 28px -6px rgba(74,108,247,0.55)",
+    border: "border-navy/30",
+    rgb: "74,108,247",
+  },
+  summary: {
+    text: "text-amber",
+    bg: "bg-amber",
+    glow: "0 0 28px -6px rgba(217,146,42,0.55)",
+    border: "border-amber/30",
+    rgb: "217,146,42",
+  },
+  missing: {
+    text: "text-amber",
+    bg: "bg-amber",
+    glow: "0 0 28px -6px rgba(217,146,42,0.55)",
+    border: "border-amber/30",
+    rgb: "217,146,42",
   },
   price: {
     text: "text-amber",
@@ -127,6 +162,78 @@ function InboxBody() {
                 {r.price}
               </span>
             </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function AutoreplyBody() {
+  return (
+    <div>
+      <div className="mb-3 flex items-center justify-between">
+        <span className="text-xs font-semibold uppercase tracking-wide text-ink/40">
+          Autosvar
+        </span>
+        <span className="flex items-center gap-1 rounded-full bg-navy/15 px-2 py-0.5 text-[10px] font-semibold text-navy">
+          <ShieldCheck size={11} />
+          Skickat direkt
+        </span>
+      </div>
+      <div className="rounded-lg border border-border bg-white/[0.02] p-3">
+        <p className="text-[11px] leading-relaxed text-ink/60">
+          &quot;Tack för ditt meddelande! Vi återkommer inom kort.&quot;
+        </p>
+      </div>
+      <div className="mt-2.5 flex items-center gap-1.5 text-[11px] text-ink/40">
+        <Send size={11} className="text-navy/60" />
+        Skickat automatiskt — alltid samma säkra text
+      </div>
+    </div>
+  );
+}
+
+function SummaryBody() {
+  return (
+    <div>
+      <div className="mb-3 flex items-center justify-between">
+        <span className="text-xs font-semibold uppercase tracking-wide text-ink/40">
+          Sammanfattning
+        </span>
+      </div>
+      <div className="space-y-2 rounded-lg border border-border bg-white/[0.02] p-3">
+        <span className="block h-2 w-[92%] rounded-full bg-white/15" />
+        <span className="block h-2 w-[78%] rounded-full bg-white/12" />
+        <span className="block h-2 w-[55%] rounded-full bg-white/10" />
+      </div>
+      <div className="mt-2.5 flex items-start gap-1.5 rounded-lg border border-amber/25 bg-amber/[0.07] px-3 py-2">
+        <Lightbulb size={13} className="mt-0.5 shrink-0 text-amber" />
+        <span className="text-[11px] leading-snug text-ink/60">
+          Kunden har bett om snabbt svar
+        </span>
+      </div>
+    </div>
+  );
+}
+
+function MissingBody() {
+  const items = ["Datum för jobbet", "Kontaktuppgifter"];
+  return (
+    <div>
+      <div className="mb-3 flex items-center justify-between">
+        <span className="text-xs font-semibold uppercase tracking-wide text-ink/40">
+          Saknad information
+        </span>
+      </div>
+      <div className="space-y-2">
+        {items.map((item) => (
+          <div
+            key={item}
+            className="flex items-center gap-2.5 rounded-lg border border-amber/25 bg-amber/[0.07] px-3 py-2.5"
+          >
+            <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-amber" />
+            <span className="text-[11px] text-ink/70">{item}</span>
           </div>
         ))}
       </div>
@@ -283,6 +390,9 @@ function InsightsBody() {
 
 const BODIES: Record<Variant, () => React.ReactElement> = {
   inbox: InboxBody,
+  autoreply: AutoreplyBody,
+  summary: SummaryBody,
+  missing: MissingBody,
   price: PriceBody,
   draft: DraftBody,
   approve: ApproveBody,

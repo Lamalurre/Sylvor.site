@@ -1,0 +1,79 @@
+import {
+  Hammer,
+  SprayCan,
+  Truck,
+  Wrench,
+  Stethoscope,
+  Scale,
+  Briefcase,
+  Home,
+  Car,
+  PartyPopper,
+} from "lucide-react";
+import Reveal from "./motion/Reveal";
+import { RevealGroup, RevealItem } from "./motion/RevealGroup";
+
+const industries = [
+  { icon: Hammer, label: "Hantverkare", flagship: true },
+  { icon: SprayCan, label: "Städfirmor" },
+  { icon: Truck, label: "Flyttfirmor" },
+  { icon: Wrench, label: "Servicebolag" },
+  { icon: Stethoscope, label: "Kliniker" },
+  { icon: Scale, label: "Jurister" },
+  { icon: Briefcase, label: "Konsulter" },
+  { icon: Home, label: "Mäklare" },
+  { icon: Car, label: "Bilfirmor" },
+  { icon: PartyPopper, label: "Eventbolag" },
+];
+
+export default function Industries() {
+  return (
+    <section className="border-y border-border bg-ivory-card px-6 py-24">
+      <div className="mx-auto max-w-5xl">
+        <Reveal className="max-w-2xl">
+          <h2 className="font-serif text-3xl font-medium tracking-tight sm:text-4xl">
+            Byggt för branscher där snabba svar vinner affärer
+          </h2>
+          <p className="mt-3 text-ink/70">
+            Sylvor är byggt först för hantverkare och byggfirmor — men
+            fungerar lika bra för alla branscher där kunden hör sig för hos
+            flera samtidigt.
+          </p>
+        </Reveal>
+
+        <RevealGroup className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+          {industries.map((ind) => {
+            const Icon = ind.icon;
+            return (
+              <RevealItem key={ind.label}>
+                <div
+                  className={`relative flex h-full flex-col items-center gap-3 rounded-2xl border px-4 py-6 text-center ${
+                    ind.flagship
+                      ? "border-navy/40 bg-ivory shadow-[0_0_24px_-10px_rgba(74,108,247,0.5)]"
+                      : "border-border bg-ivory"
+                  }`}
+                >
+                  {ind.flagship && (
+                    <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-navy px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-white">
+                      Flaggskepp
+                    </span>
+                  )}
+                  <span
+                    className={`flex h-11 w-11 items-center justify-center rounded-full border ${
+                      ind.flagship
+                        ? "border-navy/40 bg-navy text-white"
+                        : "border-navy/30 bg-ivory-card text-navy"
+                    }`}
+                  >
+                    <Icon size={18} strokeWidth={1.75} />
+                  </span>
+                  <span className="text-sm font-medium">{ind.label}</span>
+                </div>
+              </RevealItem>
+            );
+          })}
+        </RevealGroup>
+      </div>
+    </section>
+  );
+}

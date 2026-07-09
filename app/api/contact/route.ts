@@ -18,6 +18,7 @@ export async function POST(req: NextRequest) {
     pricingInfo,
     notifyChannel,
     message,
+    selectedPlan,
   } = body;
 
   if (
@@ -30,6 +31,7 @@ export async function POST(req: NextRequest) {
     typeof pricingInfo !== "string" ||
     typeof notifyChannel !== "string" ||
     typeof message !== "string" ||
+    typeof selectedPlan !== "string" ||
     !name.trim() ||
     !email.trim() ||
     !phone.trim() ||
@@ -37,7 +39,8 @@ export async function POST(req: NextRequest) {
     !businessType.trim() ||
     !channels.trim() ||
     !pricingInfo.trim() ||
-    !notifyChannel.trim()
+    !notifyChannel.trim() ||
+    !selectedPlan.trim()
   ) {
     return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
   }
@@ -52,6 +55,7 @@ export async function POST(req: NextRequest) {
     pricing_info: pricingInfo.trim(),
     notify_channel: notifyChannel.trim(),
     message: message.trim(),
+    selected_plan: selectedPlan.trim(),
   });
 
   if (error) {

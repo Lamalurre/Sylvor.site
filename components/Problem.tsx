@@ -2,9 +2,9 @@ import { RevealGroup, RevealItem } from "./motion/RevealGroup";
 import Reveal from "./motion/Reveal";
 
 const problems = [
-  "Förfrågningar blir liggande i timmar eller dagar",
-  "Varje förfrågan får samma generiska svar — eller inget alls",
-  "Svårt att hålla koll på vad som kommit in via mejl, formulär och SMS när du är ute på jobb",
+  "Kunder hör sig för hos flera företag samtidigt — den som svarar snabbast vinner oftast jobbet",
+  "Förfrågningar blir liggande i timmar eller dagar innan någon hinner svara",
+  "Svårt att hålla koll på vad som kommit in via mejl, formulär och DM när du är upptagen med annat",
   "Uppföljningar glöms bort i stressen",
 ];
 

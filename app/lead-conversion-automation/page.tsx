@@ -18,7 +18,7 @@ const steps = [
   {
     variant: "inbox" as const,
     title: "Förfrågningar kommer in som vanligt.",
-    body: "Formulär på hemsidan, vidarebefordrad e-post, SMS — inga nya verktyg att lära dig. Varje förfrågan hamnar på ett ställe, i den ordning den kommer in, så inget blir liggande i en inkorg.",
+    body: "Formulär på hemsidan, vidarebefordrad e-post, DM — inga nya verktyg att lära dig. Ett säkert autosvar går ut direkt, och varje förfrågan hamnar på ett ställe så inget blir liggande.",
     rotate: -3,
   },
   {
@@ -48,13 +48,13 @@ const faqs = [
   },
   {
     q: "Skickar AI:n meddelanden automatiskt?",
-    a: "Nej. Varje svar skrivs som ett förslag, men inget skickas förrän du godkänt det. Du är alltid sista kollen innan ett meddelande når kunden — särskilt viktigt eftersom en accepterad offert är ett bindande avtal.",
+    a: "Bara ett säkert första autosvar skickas automatiskt. Allt annat — offert, pris och fortsatta svar — kräver ditt godkännande. Du är alltid sista kollen innan något som kan tolkas som ett löfte når kunden.",
   },
   {
     q: "Vad kostar det?",
     a: (
       <>
-        Ingen startavgift — 449–1 490 kr/mån beroende på volym och behov,
+        Ingen startavgift — 449–1 499 kr/mån beroende på volym och behov,
         ingen bindningstid. Se hela prislistan under{" "}
         <Link href="/#pricing" className="text-navy underline">
           Priser
@@ -195,10 +195,10 @@ export default function LeadConversionAutomation() {
               Redo att sluta förlora jobb till långsamma svar?
             </h2>
             <Link
-              href="/#contact"
+              href="/#kom-igang"
               className="mt-6 inline-block rounded-full bg-navy px-7 py-3.5 text-base font-medium text-white shadow-[0_0_25px_-6px_rgba(74,108,247,0.7)] transition hover:bg-navy-dark"
             >
-              Boka ett gratis samtal
+              Starta 7 dagar gratis
             </Link>
           </section>
         </Reveal>

@@ -52,11 +52,18 @@ export default function DiveInCta() {
             Redo att sluta förlora jobb till långsamma svar?
           </h2>
           <a
-            href={`mailto:${CONTACT_EMAIL}`}
-            className="mt-8 inline-block rounded-full border border-ink/20 bg-ivory px-7 py-3.5 text-base font-medium text-ink transition hover:border-ink/40"
+            href="#kom-igang"
+            className="mt-8 inline-block rounded-full bg-navy px-7 py-3.5 text-base font-medium text-white shadow-[0_0_25px_-6px_rgba(74,108,247,0.7)] transition hover:bg-navy-dark"
           >
-            Boka ett gratis samtal
+            Starta 7 dagar gratis
           </a>
+          <p className="mt-4 text-sm text-ink/40">
+            Vill du hellre prata med oss?{" "}
+            <a href={`mailto:${CONTACT_EMAIL}`} className="underline">
+              Mejla oss
+            </a>
+            .
+          </p>
         </Reveal>
       </motion.div>
     </section>

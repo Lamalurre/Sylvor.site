@@ -22,10 +22,10 @@ export default function Header() {
           </Link>
         </nav>
         <Link
-          href="/#contact"
+          href="/#kom-igang"
           className="rounded-full bg-navy px-4 py-2 text-sm font-medium text-white transition hover:bg-navy-dark"
         >
-          Boka ett gratis samtal
+          Starta 7 dagar gratis
         </Link>
       </div>
     </header>

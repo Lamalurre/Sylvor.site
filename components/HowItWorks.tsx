@@ -15,8 +15,8 @@ const steps: {
 }[] = [
   {
     n: "01",
-    title: "Förfrågningar kommer in som vanligt.",
-    body: "Formulär på hemsidan, vidarebefordrad e-post, SMS — inga nya verktyg att lära dig.",
+    title: "Leadet kommer in och får svar direkt.",
+    body: "Formulär, mejl eller DM — inga nya verktyg att lära dig. Ett säkert autosvar går ut direkt, och du notifieras samtidigt.",
     left: 14,
     top: 70,
     labelTop: false,
@@ -24,8 +24,8 @@ const steps: {
   },
   {
     n: "02",
-    title: "AI läser och förbereder varje förfrågan.",
-    body: "Ett pris-utkast tas fram utifrån din prislista, saknad information flaggas, förfrågan prioriteras, och ett svarsförslag skrivs i din ton.",
+    title: "AI analyserar och skriver ett svarsförslag.",
+    body: "Leadet sammanfattas, saknad information flaggas, och ett svarsförslag skrivs i din ton — redo att skickas.",
     left: 50,
     top: 170,
     labelTop: true,
@@ -34,7 +34,7 @@ const steps: {
   {
     n: "03",
     title: "Du granskar och skickar.",
-    body: "Inget når kunden utan ditt godkännande — ingen risk att AI:n anger fel pris eller skickar ett missvisande meddelande.",
+    body: "Inget når kunden utan ditt godkännande. Svarar kunden tillbaka skapas ett nytt förslag — samma sak igen, aldrig automatiskt.",
     left: 86,
     top: 90,
     labelTop: false,
