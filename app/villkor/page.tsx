@@ -60,9 +60,10 @@ export default function Villkor() {
                 <Link href="/#pricing" className="text-navy underline">
                   sylvor.se/#pricing
                 </Link>
-                . Ingen bindningstid — du kan avsluta ditt abonnemang när du
-                vill. Priser kan komma att ändras; befintliga kunder
-                informeras i rimlig tid innan en prisändring börjar gälla.
+                . Ingen bindningstid — du kan säga upp ditt abonnemang när du
+                vill, med 30 dagars uppsägningstid. Priser kan komma att
+                ändras; befintliga kunder informeras i rimlig tid innan en
+                prisändring börjar gälla.
               </p>
             </section>
 
@@ -128,9 +129,10 @@ export default function Villkor() {
               <h2 className="font-serif text-xl font-medium text-ink">10. Ändringar och uppsägning</h2>
               <p className="mt-3">
                 Vi kan uppdatera dessa villkor löpande; väsentliga ändringar
-                meddelas på sidan. Du kan säga upp ditt konto när du vill.
-                Vi förbehåller oss rätten att stänga av konton som missbrukar
-                tjänsten eller bryter mot dessa villkor.
+                meddelas på sidan. Du kan säga upp ditt konto när du vill —
+                för betalande abonnemang gäller 30 dagars uppsägningstid, se
+                punkt 4. Vi förbehåller oss rätten att stänga av konton som
+                missbrukar tjänsten eller bryter mot dessa villkor.
               </p>
             </section>
 

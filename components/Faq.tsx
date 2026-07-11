@@ -41,7 +41,7 @@ const faqs = [
   },
   {
     q: "Finns det bindningstid?",
-    a: "Nej, ingen bindningstid. Avsluta när du vill.",
+    a: "Nej, ingen bindningstid. Betalande abonnemang har 30 dagars uppsägningstid.",
   },
   {
     q: "Hur hanteras kunddata?",

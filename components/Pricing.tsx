@@ -117,7 +117,7 @@ export default function Pricing() {
       </div>
       <Reveal delay={0.3}>
         <p className="mt-10 text-sm text-ink/50">
-          Ingen bindningstid. Avsluta när du vill.
+          Ingen bindningstid. 30 dagars uppsägningstid.
         </p>
         <p className="mt-1 text-sm text-ink/50">
           Inget kreditkort krävs för att komma igång. Igång på några minuter.
