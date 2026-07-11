@@ -78,19 +78,54 @@ export default function Villkor() {
             </section>
 
             <section>
-              <h2 className="font-serif text-xl font-medium text-ink">6. Ansvarsbegränsning</h2>
+              <h2 className="font-serif text-xl font-medium text-ink">6. Otillåten användning</h2>
+              <p className="mt-3">Du får inte:</p>
+              <ul className="mt-3 list-disc space-y-1.5 pl-5">
+                <li>Använda Sylvor för olaglig verksamhet eller i strid med tillämplig lag.</li>
+                <li>Försöka få obehörig åtkomst till tjänsten, andra kunders konton eller vår infrastruktur.</li>
+                <li>Sälja, licensiera eller på annat sätt vidareupplåta tjänsten till tredje part utan vårt skriftliga medgivande.</li>
+                <li>Skicka skadlig kod eller på annat sätt störa tjänstens drift.</li>
+              </ul>
+              <p className="mt-3">
+                Vi förbehåller oss rätten att stänga av konton som bryter mot
+                detta.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="font-serif text-xl font-medium text-ink">7. Immateriella rättigheter</h2>
+              <p className="mt-3">
+                Sylvor och den underliggande plattformen ägs av oss. Du äger
+                fortsatt allt innehåll du själv laddar upp (t.ex. prislistor
+                och texter) och ger oss endast den licens som krävs för att
+                leverera tjänsten till dig.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="font-serif text-xl font-medium text-ink">8. Ansvarsbegränsning</h2>
               <p className="mt-3">
                 Sylvor tillhandahålls i befintligt skick. Vi ansvarar inte
                 för indirekta skador eller förlorad affär till följd av
                 driftstörningar, felaktiga AI-genererade utkast som du valt
                 att godkänna, eller tredjepartstjänster vi är beroende av.
                 Räkneexempel och kalkylatorer på sylvor.se är uppskattningar,
-                inte garantier.
+                inte garantier. Vårt totala ansvar är i alla händelser
+                begränsat till det belopp du betalat för tjänsten under de
+                senaste 12 månaderna.
               </p>
             </section>
 
             <section>
-              <h2 className="font-serif text-xl font-medium text-ink">7. Ändringar och uppsägning</h2>
+              <h2 className="font-serif text-xl font-medium text-ink">9. Tillämplig lag</h2>
+              <p className="mt-3">
+                Dessa villkor regleras av svensk lag. Tvist som inte kan lösas
+                genom förhandling avgörs av svensk domstol.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="font-serif text-xl font-medium text-ink">10. Ändringar och uppsägning</h2>
               <p className="mt-3">
                 Vi kan uppdatera dessa villkor löpande; väsentliga ändringar
                 meddelas på sidan. Du kan säga upp ditt konto när du vill.

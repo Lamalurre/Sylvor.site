@@ -84,17 +84,31 @@ export default function Integritetspolicy() {
 
             <section>
               <h2 className="font-serif text-xl font-medium text-ink">5. Hur länge vi sparar uppgifter</h2>
+              <ul className="mt-3 list-disc space-y-1.5 pl-5">
+                <li>Kontouppgifter: så länge kontot är aktivt, och upp till 12 månader efter uppsägning.</li>
+                <li>Intresseanmälningar som aldrig blir kunder: upp till 12 månader för uppföljning, om du inte begär tidigare radering.</li>
+                <li>Bokförings-/fakturaunderlag: enligt bokföringslagens krav (normalt 7 år), när betalning väl hanteras via tjänsten.</li>
+              </ul>
               <p className="mt-3">
-                Vi sparar uppgifter så länge du är kund hos oss, samt en
-                rimlig tid därefter för bokföring, uppföljning och för att
-                uppfylla rättsliga skyldigheter. Uppgifter från intresseanmälningar
-                som aldrig blir kunder sparas för uppföljning i upp till 12
-                månader, om du inte begär att de raderas tidigare.
+                Du kan alltid begära tidigare radering — se dina rättigheter
+                nedan.
               </p>
             </section>
 
             <section>
-              <h2 className="font-serif text-xl font-medium text-ink">6. Dina rättigheter</h2>
+              <h2 className="font-serif text-xl font-medium text-ink">6. Säkerhet</h2>
+              <p className="mt-3">
+                Data överförs krypterat (HTTPS) och lagras hos underleverantörer
+                som krypterar data i vila. Åtkomst till kundens data är
+                begränsad till vad som krävs för att driva tjänsten. Vi
+                genomför inte regelbundna externa säkerhetsrevisioner i
+                dagsläget — kontakta oss om du har specifika säkerhetsfrågor
+                inför ett köp.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="font-serif text-xl font-medium text-ink">7. Dina rättigheter</h2>
               <p className="mt-3">
                 Du har rätt att begära tillgång till, rättelse av eller
                 radering av dina personuppgifter, samt rätt att invända mot
@@ -108,7 +122,7 @@ export default function Integritetspolicy() {
             </section>
 
             <section>
-              <h2 className="font-serif text-xl font-medium text-ink">7. Ändringar</h2>
+              <h2 className="font-serif text-xl font-medium text-ink">8. Ändringar</h2>
               <p className="mt-3">
                 Vi kan komma att uppdatera denna policy, till exempel när
                 Sylvor formellt registreras som företag eller när nya
