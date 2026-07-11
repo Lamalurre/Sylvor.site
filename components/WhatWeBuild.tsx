@@ -12,11 +12,8 @@ export default function WhatWeBuild() {
           href="/lead-conversion-automation"
           className="mt-10 block rounded-2xl border border-border bg-ivory-card p-8 transition hover:border-navy/40 hover:shadow-sm"
         >
-          <span className="text-xs font-semibold uppercase tracking-wide text-navy">
-            Flaggskepp
-          </span>
-          <h3 className="mt-2 font-serif text-2xl font-medium">
-            Första svaret
+          <h3 className="font-serif text-2xl font-medium">
+            Så fungerar Sylvor
           </h3>
           <p className="mt-3 max-w-2xl leading-relaxed text-ink/70">
             Så läses varje inkommande förfrågan, kontrolleras för saknad

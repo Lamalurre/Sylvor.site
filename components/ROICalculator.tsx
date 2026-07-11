@@ -59,23 +59,20 @@ export default function ROICalculator() {
           </div>
 
           <div>
-            <label htmlFor="avgValue" className="block text-sm font-medium">
-              Genomsnittligt projektvärde
-            </label>
-            <div className="relative mt-1.5">
-              <input
-                id="avgValue"
-                type="number"
-                min={0}
-                step={500}
-                value={avgValue}
-                onChange={(e) => setAvgValue(Number(e.target.value))}
-                className="w-full rounded-lg border border-border bg-ivory px-4 py-2.5 pr-12 outline-none focus:border-navy"
-              />
-              <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-sm text-ink/40">
-                kr
-              </span>
+            <div className="flex items-center justify-between text-sm font-medium">
+              <label htmlFor="avgValue">Genomsnittligt projektvärde</label>
+              <span className="text-navy">{formatKr(avgValue)}</span>
             </div>
+            <input
+              id="avgValue"
+              type="range"
+              min={0}
+              max={100000}
+              step={1000}
+              value={avgValue}
+              onChange={(e) => setAvgValue(Number(e.target.value))}
+              className="mt-2 w-full accent-navy"
+            />
           </div>
 
           <div>

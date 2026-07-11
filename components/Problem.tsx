@@ -21,7 +21,7 @@ export default function Problem() {
           ))}
         </RevealGroup>
         <Reveal delay={0.3}>
-          <p className="mt-12 font-serif text-xl italic leading-relaxed text-ink/80 sm:text-2xl">
+          <p className="mt-12 text-center font-serif text-xl italic leading-relaxed text-ink/80 sm:text-2xl">
             Varje obesvarad förfrågan är ett jobb som går till den som
             svarade först — oftast en konkurrent.
           </p>

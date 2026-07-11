@@ -9,7 +9,7 @@ import RevealStep from "@/components/motion/RevealStep";
 import { RevealGroup, RevealItem } from "@/components/motion/RevealGroup";
 
 export const metadata: Metadata = {
-  title: "Första svaret — Sylvor",
+  title: "Så fungerar Sylvor",
   description:
     "Så fångar och prioriterar Sylvor dina inkommande förfrågningar och skriver ett svarsförslag — du godkänner alltid innan något skickas.",
 };
@@ -65,7 +65,7 @@ const faqs = [
   },
   {
     q: "Hur snabbt kan jag komma igång?",
-    a: "Fyll i dina uppgifter i formuläret ovan (hur du tar emot förfrågningar idag, samt din prissättning), så är du igång inom 24 timmar. Inget kreditkort krävs förrän du är live och nöjd.",
+    a: "Fyll i dina uppgifter i registreringsflödet (hur du tar emot förfrågningar idag, samt din prissättning), så skapas ditt konto direkt — igång på några minuter. Inget kreditkort krävs förrän du är live och nöjd.",
   },
   {
     q: "Passar det mitt yrke?",
@@ -86,11 +86,8 @@ export default function LeadConversionAutomation() {
             >
               ← Tillbaka till Sylvor
             </Link>
-            <span className="mt-6 block text-xs font-semibold uppercase tracking-wide text-navy">
-              Flaggskepp
-            </span>
-            <h1 className="mt-2 font-serif text-4xl font-medium tracking-tight sm:text-5xl">
-              Första svaret
+            <h1 className="mt-6 font-serif text-4xl font-medium tracking-tight sm:text-5xl">
+              Så fungerar Sylvor
             </h1>
             <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink/70">
               Varje inkommande förfrågan läses, prissätts utifrån din

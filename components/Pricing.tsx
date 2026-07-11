@@ -120,7 +120,7 @@ export default function Pricing() {
           Ingen bindningstid. Avsluta när du vill.
         </p>
         <p className="mt-1 text-sm text-ink/50">
-          Inget kreditkort krävs för att komma igång. Igång inom 24 timmar.
+          Inget kreditkort krävs för att komma igång. Igång på några minuter.
         </p>
       </Reveal>
     </section>

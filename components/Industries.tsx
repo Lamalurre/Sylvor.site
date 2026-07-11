@@ -35,9 +35,9 @@ export default function Industries() {
             Byggt för branscher där snabba svar vinner affärer
           </h2>
           <p className="mt-3 text-ink/70">
-            Sylvor är byggt först för hantverkare, städfirmor och
-            flyttfirmor — men fungerar lika bra för alla branscher där
-            kunden hör sig för hos flera samtidigt.
+            Sylvor fungerar för alla branscher nedan. Hantverkare,
+            städfirmor och flyttfirmor är de som använder Sylvor mest —
+            men plattformen är lika kraftfull för resten.
           </p>
         </Reveal>
 
@@ -53,11 +53,6 @@ export default function Industries() {
                       : "border-border bg-ivory"
                   }`}
                 >
-                  {ind.flagship && (
-                    <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-navy px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-white">
-                      Flaggskepp
-                    </span>
-                  )}
                   <span
                     className={`flex h-11 w-11 items-center justify-center rounded-full border ${
                       ind.flagship

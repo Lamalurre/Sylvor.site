@@ -401,7 +401,7 @@ export default function OnboardingWizard() {
                 <Check size={26} strokeWidth={2} />
               </span>
               <h3 className="mt-4 font-serif text-2xl font-medium">
-                Tack! Ni är igång inom 24 timmar.
+                Tack! Ni är igång på några minuter.
               </h3>
               <p className="mx-auto mt-2 max-w-sm text-ink/60">
                 Kolla din inkorg på {form.email} — där väntar en länk för att
