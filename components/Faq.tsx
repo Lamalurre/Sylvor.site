@@ -13,7 +13,7 @@ const faqs = [
   },
   {
     q: "Vad händer om kunden svarar tillbaka?",
-    a: "Sylvor läser svaret och tar fram ett nytt svarsförslag — men inget skickas automatiskt. Du godkänner varje gång, precis som första gången.",
+    a: "Du loggar kundens svar i Sylvor, som då tar fram ett nytt svarsförslag — inget skickas automatiskt, du godkänner varje gång precis som första gången. Automatisk inläsning av mejlsvar är inte klart ännu.",
   },
   {
     q: "Fungerar det med e-post?",
