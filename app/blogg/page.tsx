@@ -30,7 +30,9 @@ export default function BlogIndex() {
         </Reveal>
 
         <RevealGroup className="mx-auto max-w-4xl space-y-6 px-6 py-12">
-          {blogPosts.map((post) => (
+          {[...blogPosts]
+            .sort((a, b) => b.date.localeCompare(a.date))
+            .map((post) => (
             <RevealItem key={post.slug}>
               <Link
                 href={`/blogg/${post.slug}`}

@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Reveal from "./motion/Reveal";
 
 const plans = [
@@ -12,6 +13,14 @@ const plans = [
     desc: "E-post- och formulärintag, med grundläggande AI-svarsförslag för varje lead.",
     rotate: -2,
     highlight: false,
+    forWhom:
+      "Nya företag eller mindre team som vill testa automatiserade svar utan stort åtagande.",
+    includes: [
+      "E-post- och formulärintag",
+      "AI-svarsförslag för varje lead",
+      "1 användare",
+      "50 leads/mån",
+    ],
   },
   {
     tier: "Standard",
@@ -21,6 +30,15 @@ const plans = [
     desc: "SMS-notiser, snabbare svarstider och upp till 3 användare.",
     rotate: 0,
     highlight: true,
+    forWhom:
+      "Växande team som vill svara snabbare och hålla koll på fler förfrågningar samtidigt.",
+    includes: [
+      "Allt i Bas",
+      "SMS-notiser",
+      "Snabbare svarstider",
+      "Upp till 3 användare",
+      "200 leads/mån",
+    ],
   },
   {
     tier: "Firma",
@@ -30,10 +48,21 @@ const plans = [
     desc: "Obegränsade användare, prioriterad support och anpassade arbetsflöden för ditt team.",
     rotate: 2,
     highlight: false,
+    forWhom:
+      "Större team eller flera kontor som behöver skalbar automation utan användarbegränsningar.",
+    includes: [
+      "Allt i Standard",
+      "Obegränsade användare",
+      "Prioriterad support",
+      "Anpassade arbetsflöden",
+      "Högre volym (fair use)",
+    ],
   },
 ];
 
 export default function Pricing() {
+  const [expanded, setExpanded] = useState<string | null>(null);
+
   return (
     <section id="pricing" className="mx-auto max-w-5xl px-6 py-24">
       <h2 className="font-serif text-3xl font-medium tracking-tight sm:text-4xl">
@@ -77,10 +106,10 @@ export default function Pricing() {
                   delay: i * 0.12,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className={`rounded-2xl border p-8 shadow-[0_20px_45px_-20px_rgba(0,0,0,0.6)] ${
+                className={`rounded-2xl border p-8 shadow-[0_20px_45px_-20px_rgba(0,0,0,0.6)] transition-shadow duration-300 ${
                   p.highlight
-                    ? "border-navy bg-ivory-card shadow-[0_0_35px_-8px_rgba(74,108,247,0.45)]"
-                    : "border-border bg-ivory-card"
+                    ? "border-navy bg-ivory-card shadow-[0_0_35px_-8px_rgba(74,108,247,0.45)] hover:shadow-[0_0_45px_-6px_rgba(74,108,247,0.65)]"
+                    : "border-border bg-ivory-card hover:border-navy/50 hover:shadow-[0_0_35px_-10px_rgba(74,108,247,0.4)]"
                 }`}
               >
                 <span
@@ -100,6 +129,59 @@ export default function Pricing() {
                 <p className="mt-4 text-sm leading-relaxed text-ink/70">
                   {p.desc}
                 </p>
+
+                <button
+                  type="button"
+                  onClick={() =>
+                    setExpanded(expanded === p.tier ? null : p.tier)
+                  }
+                  className="mt-4 flex items-center gap-1 text-xs font-medium text-navy/70 hover:text-navy"
+                >
+                  {expanded === p.tier ? "Visa mindre" : "Vad ingår?"}
+                  <span
+                    className={`transition-transform duration-300 ${
+                      expanded === p.tier ? "rotate-180" : ""
+                    }`}
+                  >
+                    ↓
+                  </span>
+                </button>
+
+                <AnimatePresence initial={false}>
+                  {expanded === p.tier && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                      className="overflow-hidden"
+                    >
+                      <div className="mt-4 space-y-3 border-t border-border pt-4">
+                        <p className="text-xs font-semibold uppercase tracking-wide text-ink/40">
+                          Passar för
+                        </p>
+                        <p className="text-sm leading-relaxed text-ink/70">
+                          {p.forWhom}
+                        </p>
+                        <p className="pt-1 text-xs font-semibold uppercase tracking-wide text-ink/40">
+                          Ingår
+                        </p>
+                        <ul className="space-y-1.5">
+                          {p.includes.map((item) => (
+                            <li
+                              key={item}
+                              className="flex items-start gap-2 text-sm text-ink/70"
+                            >
+                              <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-navy/60" />
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+
                 <a
                   href="#kom-igang"
                   className={`mt-6 block rounded-full px-5 py-2.5 text-center text-sm font-medium transition ${
