@@ -79,12 +79,13 @@ export function generateStaticParams() {
   return industries.map((i) => ({ slug: i.slug }));
 }
 
-export function generateMetadata({
+export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
-}): Metadata {
-  const industry = industries.find((i) => i.slug === params.slug);
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const industry = industries.find((i) => i.slug === slug);
   if (!industry) return {};
   return {
     title: `Sylvor för ${industry.name.toLowerCase()}`,
@@ -92,12 +93,13 @@ export function generateMetadata({
   };
 }
 
-export default function IndustryPage({
+export default async function IndustryPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const industry = industries.find((i) => i.slug === params.slug);
+  const { slug } = await params;
+  const industry = industries.find((i) => i.slug === slug);
   if (!industry) notFound();
 
   const Icon = industry.icon;
