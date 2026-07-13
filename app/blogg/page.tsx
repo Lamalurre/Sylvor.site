@@ -9,7 +9,7 @@ import { blogPosts } from "@/lib/blog";
 export const metadata: Metadata = {
   title: "Blogg — Sylvor",
   description:
-    "Tips och insikter för hantverkare och byggfirmor om förfrågningar, offertarbete och kundkommunikation.",
+    "Tips och insikter för hantverkare, städfirmor, flyttfirmor och andra serviceföretag om förfrågningar, offertarbete och kundkommunikation.",
 };
 
 export default function BlogIndex() {
@@ -23,8 +23,9 @@ export default function BlogIndex() {
               Blogg
             </h1>
             <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink/70">
-              Tips och insikter för hantverkare och byggfirmor om
-              förfrågningar, offertarbete och kundkommunikation.
+              Tips och insikter för hantverkare, städfirmor, flyttfirmor och
+              andra serviceföretag om förfrågningar, offertarbete och
+              kundkommunikation.
             </p>
           </section>
         </Reveal>
