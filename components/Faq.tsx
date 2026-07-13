@@ -13,11 +13,15 @@ const faqs = [
   },
   {
     q: "Vad händer om kunden svarar tillbaka?",
-    a: "Du loggar kundens svar i Sylvor, som då tar fram ett nytt svarsförslag — inget skickas automatiskt, du godkänner varje gång precis som första gången. Automatisk inläsning av mejlsvar är inte klart ännu.",
+    a: "Om kunden svarar via mejl läser Sylvor automatiskt in svaret och tar fram ett nytt svarsförslag. Kommer svaret via telefon eller en annan kanal loggar du det själv i Sylvor. Inget skickas automatiskt — du godkänner varje förslag innan det går ut.",
   },
   {
     q: "Fungerar det med e-post?",
     a: "Ja, e-post är ett av de vanligaste sätten att ta emot leads på och stöds fullt ut från start.",
+  },
+  {
+    q: "Är det säkert att vidarebefordra min e-post till Sylvor?",
+    a: "Ja. Sylvor läser bara av vad som faktiskt är en kundförfrågan — nyhetsbrev, kvitton och privata mejl som råkar hamna där blir aldrig ett lead. Ni kan vidarebefordra hela inkorgen utan att oroa er för att skräp dyker upp som falska leads.",
   },
   {
     q: "Kommer SMS att stödjas?",
