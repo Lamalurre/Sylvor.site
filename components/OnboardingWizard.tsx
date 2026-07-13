@@ -186,6 +186,7 @@ type FormState = {
   contactPhone: string;
   notifyPreference: "email" | "sms" | "none";
   intendedPlan: string;
+  agreedToTerms: boolean;
 };
 
 const EMPTY_FORM: FormState = {
@@ -217,6 +218,7 @@ const EMPTY_FORM: FormState = {
   contactPhone: "",
   notifyPreference: "email",
   intendedPlan: "",
+  agreedToTerms: false,
 };
 
 const TOTAL_STEPS = 7;
@@ -884,6 +886,25 @@ export default function OnboardingWizard() {
                       </label>
                     ))}
                   </div>
+                  <label className="flex items-start gap-2.5 text-sm text-ink/70">
+                    <input
+                      type="checkbox"
+                      checked={form.agreedToTerms}
+                      onChange={(e) => update("agreedToTerms", e.target.checked)}
+                      className="mt-0.5 h-4 w-4 rounded border-border accent-navy"
+                    />
+                    <span>
+                      Jag godkänner Sylvors{" "}
+                      <a href="/villkor" target="_blank" rel="noopener noreferrer" className="text-navy underline">
+                        användarvillkor
+                      </a>{" "}
+                      och{" "}
+                      <a href="/integritetspolicy" target="_blank" rel="noopener noreferrer" className="text-navy underline">
+                        integritetspolicy
+                      </a>
+                      .
+                    </span>
+                  </label>
                 </div>
               )}
 
@@ -912,7 +933,7 @@ export default function OnboardingWizard() {
                     <button
                       type="button"
                       onClick={handleSubmit}
-                      disabled={status === "submitting"}
+                      disabled={status === "submitting" || !form.agreedToTerms}
                       className="rounded-full bg-navy px-6 py-2.5 text-sm font-medium text-white shadow-[0_0_20px_-6px_rgba(74,108,247,0.7)] transition hover:bg-navy-dark disabled:opacity-60"
                     >
                       {status === "submitting" ? "Skickar..." : "Starta gratis provperiod"}
