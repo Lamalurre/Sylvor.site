@@ -80,7 +80,7 @@ const AUTOMATION_LEVELS: {
   {
     value: "autosvar_foljdfragor",
     label: "Autosvar + enkla följdfrågor",
-    desc: "Sylvor kan skicka autosvar och enkla följdfrågor enligt dina regler.",
+    desc: "Sylvor kan skicka autosvar och enkla följdfrågor enligt dina regler. Just nu identiskt med Tryggt läge — den utökade automationen är inte aktiverad ännu.",
   },
 ];
 
@@ -408,6 +408,9 @@ export default function OnboardingWizard() {
               <p className="mx-auto mt-2 max-w-sm text-ink/60">
                 Kolla din inkorg på {form.email} — där väntar en länk för att
                 sätta lösenord och logga in i Sylvor.
+              </p>
+              <p className="mx-auto mt-1 max-w-sm text-xs text-ink/40">
+                Ser du inget mejl direkt? Kolla skräpposten.
               </p>
             </div>
           ) : (
