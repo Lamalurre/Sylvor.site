@@ -36,6 +36,10 @@ const faqs = [
     a: "Ja. Du kan redigera pris, ton och innehåll i varje svarsförslag innan du godkänner och skickar.",
   },
   {
+    q: "Kan jag lita på att priset AI:n anger stämmer?",
+    a: "Ja. Priset är aldrig en AI-gissning — det räknas fram deterministiskt utifrån din egen prislista, samma siffra varje gång för samma jobb. AI:n skriver bara in det färdiga priset i svarsförslaget.",
+  },
+  {
     q: "Vad räknas som ett lead?",
     a: "Varje ny förfrågan som kommer in via en ansluten kanal — e-post, formulär eller DM — räknas som ett lead.",
   },

@@ -24,7 +24,7 @@ const steps = [
   {
     variant: "price" as const,
     title: "AI läser och förbereder varje förfrågan.",
-    body: "Ett pris-utkast tas fram utifrån din prislista, och förfrågan prioriteras så att de mest brådskande hamnar överst.",
+    body: "Priset räknas fram exakt utifrån din prislista — aldrig en AI-gissning — och förfrågan prioriteras så att de mest brådskande hamnar överst.",
     rotate: 2,
   },
   {

@@ -1,4 +1,4 @@
-import { ShieldCheck, Zap, Languages, Tag, Clock } from "lucide-react";
+import { ShieldCheck, Zap, Languages, Tag, Clock, MessagesSquare } from "lucide-react";
 import { RevealGroup, RevealItem } from "./motion/RevealGroup";
 
 const topRow = [
@@ -11,6 +11,11 @@ const topRow = [
     icon: Tag,
     title: "Prissatt utifrån din egen prislista",
     desc: "Uppskattningar beräknas utifrån priser du själv anger — inga gissningar.",
+  },
+  {
+    icon: MessagesSquare,
+    title: "Kommer ihåg hela konversationen",
+    desc: "AI:n ser hela mejlväxlingen, inte bara senaste svaret — frågar aldrig om något kunden redan sagt.",
   },
 ];
 
@@ -55,7 +60,7 @@ export default function Benefits() {
           Varför Sylvor
         </h2>
 
-        <RevealGroup className="mt-12 grid gap-6 sm:grid-cols-2">
+        <RevealGroup className="mt-12 grid gap-6 sm:grid-cols-3">
           {topRow.map((b) => (
             <RevealItem key={b.title}>
               <Card {...b} />
