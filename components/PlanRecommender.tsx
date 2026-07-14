@@ -36,10 +36,7 @@ export default function PlanRecommender() {
 
   return (
     <Reveal>
-      <div
-        className="relative mx-auto max-w-2xl rounded-2xl border border-navy/30 bg-ivory-card p-8 shadow-[0_20px_45px_-20px_rgba(0,0,0,0.6)]"
-        style={{ transform: "rotate(1deg)" }}
-      >
+      <div className="relative mx-auto max-w-2xl rounded-2xl border border-navy/30 bg-ivory-card p-8 shadow-[0_20px_45px_-20px_rgba(0,0,0,0.6)]">
         <span
           className="absolute -top-4 -right-4 flex h-11 w-11 items-center justify-center rounded-full bg-navy text-white ring-4 ring-ivory"
           style={{ boxShadow: "0 0 28px -6px rgba(74,108,247,0.55)" }}
