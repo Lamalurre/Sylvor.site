@@ -28,7 +28,7 @@ export default function Header() {
           href="/#kom-igang"
           className="rounded-full bg-navy px-4 py-2 text-sm font-medium text-white transition hover:bg-navy-dark"
         >
-          Starta 7 dagar gratis
+          Starta 14 dagar gratis
         </Link>
       </div>
     </header>

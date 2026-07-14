@@ -33,7 +33,7 @@ export default function Villkor() {
             <section>
               <h2 className="font-serif text-xl font-medium text-ink">2. Provperiod</h2>
               <p className="mt-3">
-                Nya konton får normalt 7 dagars gratis provperiod med full
+                Nya konton får normalt 14 dagars gratis provperiod med full
                 funktionalitet. Inget kreditkort krävs för att starta
                 provperioden. Vi förbehåller oss rätten att neka eller
                 begränsa upprepade provperioder för samma företag, telefonnummer

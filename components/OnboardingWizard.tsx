@@ -89,7 +89,7 @@ const PLANS = [
   { value: "bas", label: "Bas", price: "449 kr/mån" },
   { value: "standard", label: "Standard", price: "799 kr/mån" },
   { value: "firma", label: "Firma", price: "1 499 kr/mån" },
-  { value: "trial", label: "Bara testa", price: "7 dagar gratis, inget val ännu" },
+  { value: "trial", label: "Bara testa", price: "14 dagar gratis, inget val ännu" },
 ];
 
 const LOCAL_EXAMPLES: Record<
@@ -418,7 +418,7 @@ export default function OnboardingWizard() {
             <>
               <div>
                 <h3 className="font-serif text-2xl font-medium">
-                  Starta 7 dagar gratis
+                  Starta 14 dagar gratis
                 </h3>
                 <p className="mt-1 text-sm text-ink/60">
                   Steg {step} av {TOTAL_STEPS} — mesta möjliga går att ändra

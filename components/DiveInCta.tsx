@@ -55,7 +55,7 @@ export default function DiveInCta() {
             href="#kom-igang"
             className="mt-8 inline-block rounded-full bg-navy px-7 py-3.5 text-base font-medium text-white shadow-[0_0_25px_-6px_rgba(74,108,247,0.7)] transition hover:bg-navy-dark"
           >
-            Starta 7 dagar gratis
+            Starta 14 dagar gratis
           </a>
           <p className="mt-4 text-sm text-ink/40">
             Vill du hellre prata med oss?{" "}

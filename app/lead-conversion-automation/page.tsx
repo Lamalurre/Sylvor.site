@@ -195,7 +195,7 @@ export default function LeadConversionAutomation() {
               href="/#kom-igang"
               className="mt-6 inline-block rounded-full bg-navy px-7 py-3.5 text-base font-medium text-white shadow-[0_0_25px_-6px_rgba(74,108,247,0.7)] transition hover:bg-navy-dark"
             >
-              Starta 7 dagar gratis
+              Starta 14 dagar gratis
             </Link>
           </section>
         </Reveal>

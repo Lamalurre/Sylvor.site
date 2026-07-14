@@ -19,7 +19,7 @@ export default function BlogCta() {
             href="/#kom-igang"
             className="rounded-full bg-navy px-5 py-2.5 text-sm font-medium text-white shadow-[0_0_20px_-6px_rgba(74,108,247,0.7)] transition hover:bg-navy-dark"
           >
-            Testa 7 dagar gratis
+            Testa 14 dagar gratis
           </Link>
           <button
             type="button"

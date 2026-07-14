@@ -190,7 +190,7 @@ export default function Pricing() {
                       : "border border-ink/20 text-ink hover:border-ink/40 hover:bg-ink/5"
                   }`}
                 >
-                  Starta 7 dagar gratis
+                  Starta 14 dagar gratis
                 </a>
               </motion.div>
             </div>

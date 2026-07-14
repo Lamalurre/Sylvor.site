@@ -45,7 +45,7 @@ const faqs = [
   },
   {
     q: "Hur fungerar provperioden?",
-    a: "Du testar Sylvor gratis i 7 dagar med full funktionalitet. Inget kreditkort krävs för att komma igång.",
+    a: "Du testar Sylvor gratis i 14 dagar med full funktionalitet. Inget kreditkort krävs för att komma igång.",
   },
   {
     q: "Finns det bindningstid?",

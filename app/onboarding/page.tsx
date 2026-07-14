@@ -17,7 +17,7 @@ const steps = [
   {
     variant: "inbox" as const,
     title: "Skapa konto på några minuter.",
-    body: "Berätta hur ni jobbar idag — bransch, prissättning och hur automatiskt ni vill att Sylvor ska svara. Ingen betalning krävs för att komma igång, 7 dagar fri provperiod direkt.",
+    body: "Berätta hur ni jobbar idag — bransch, prissättning och hur automatiskt ni vill att Sylvor ska svara. Ingen betalning krävs för att komma igång, 14 dagar fri provperiod direkt.",
     rotate: -3,
   },
   {
@@ -154,7 +154,7 @@ export default function OnboardingPage() {
               href="/#kom-igang"
               className="mt-6 inline-block rounded-full bg-navy px-7 py-3.5 text-base font-medium text-white shadow-[0_0_25px_-6px_rgba(74,108,247,0.7)] transition hover:bg-navy-dark"
             >
-              Starta 7 dagar gratis
+              Starta 14 dagar gratis
             </Link>
           </section>
         </Reveal>
